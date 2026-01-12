@@ -1,0 +1,31 @@
+[0.059s] Invoking command in '/root/catkin_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sunrise/wheeltec_tros/install/reid:/home/sunrise/wheeltec_tros/install/mono2d_body_detect:/home/sunrise/wheeltec_tros/install/hobot_eye:/home/sunrise/wheeltec_tros/install/fisheye_camera:/home/sunrise/wheeltec_tros/install/face_recog:/home/sunrise/wheeltec_tros/install/face_landmarks_detection:/home/sunrise/wheeltec_tros/install/body_tracking:/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --build /root/catkin_ws/build/cpp_pkg -- -j8 -l8
+[0.348s] [35m[1mConsolidate compiler generated dependencies of target driver_node[0m
+[0.524s] [ 40%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/main.cpp.o[0m
+[0.525s] [ 40%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o[0m
+[68.446s] [ 60%] [32m[1mLinking CXX executable driver_node[0m
+[73.277s] [100%] Built target driver_node
+[73.337s] Invoked command in '/root/catkin_ws/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sunrise/wheeltec_tros/install/reid:/home/sunrise/wheeltec_tros/install/mono2d_body_detect:/home/sunrise/wheeltec_tros/install/hobot_eye:/home/sunrise/wheeltec_tros/install/fisheye_camera:/home/sunrise/wheeltec_tros/install/face_recog:/home/sunrise/wheeltec_tros/install/face_landmarks_detection:/home/sunrise/wheeltec_tros/install/body_tracking:/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --build /root/catkin_ws/build/cpp_pkg -- -j8 -l8
+[73.400s] Invoking command in '/root/catkin_ws/build/cpp_pkg': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sunrise/wheeltec_tros/install/reid:/home/sunrise/wheeltec_tros/install/mono2d_body_detect:/home/sunrise/wheeltec_tros/install/hobot_eye:/home/sunrise/wheeltec_tros/install/fisheye_camera:/home/sunrise/wheeltec_tros/install/face_recog:/home/sunrise/wheeltec_tros/install/face_landmarks_detection:/home/sunrise/wheeltec_tros/install/body_tracking:/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --install /root/catkin_ws/build/cpp_pkg
+[73.455s] -- Install configuration: ""
+[73.468s] -- Installing: /root/catkin_ws/install/cpp_pkg/lib/cpp_pkg/driver_node
+[73.519s] -- Set runtime path of "/root/catkin_ws/install/cpp_pkg/lib/cpp_pkg/driver_node" to "/usr/local/lib"
+[73.520s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/launch
+[73.520s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/launch/__pycache__
+[73.521s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/launch/__pycache__/turn_on_robot.launch.cpython-310.pyc
+[73.521s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/launch/turn_on_robot.launch.py
+[73.522s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/ament_index/resource_index/package_run_dependencies/cpp_pkg
+[73.522s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/ament_index/resource_index/parent_prefix_path/cpp_pkg
+[73.523s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.sh
+[73.523s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.dsv
+[73.524s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/environment/path.sh
+[73.524s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/environment/path.dsv
+[73.525s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/local_setup.bash
+[73.525s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/local_setup.sh
+[73.526s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/local_setup.zsh
+[73.526s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/local_setup.dsv
+[73.526s] -- Installing: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/package.dsv
+[73.527s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/ament_index/resource_index/packages/cpp_pkg
+[73.528s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig.cmake
+[73.529s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig-version.cmake
+[73.532s] -- Up-to-date: /root/catkin_ws/install/cpp_pkg/share/cpp_pkg/package.xml
+[73.533s] Invoked command in '/root/catkin_ws/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sunrise/wheeltec_tros/install/reid:/home/sunrise/wheeltec_tros/install/mono2d_body_detect:/home/sunrise/wheeltec_tros/install/hobot_eye:/home/sunrise/wheeltec_tros/install/fisheye_camera:/home/sunrise/wheeltec_tros/install/face_recog:/home/sunrise/wheeltec_tros/install/face_landmarks_detection:/home/sunrise/wheeltec_tros/install/body_tracking:/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --install /root/catkin_ws/build/cpp_pkg

@@ -1,0 +1,10 @@
+/root/catkin_ws/build/cpp_pkg/CMakeFiles/uninstall.dir
+/root/catkin_ws/build/cpp_pkg/CMakeFiles/cpp_pkg_uninstall.dir
+/root/catkin_ws/build/cpp_pkg/CMakeFiles/driver_node.dir
+/root/catkin_ws/build/cpp_pkg/CMakeFiles/test.dir
+/root/catkin_ws/build/cpp_pkg/CMakeFiles/edit_cache.dir
+/root/catkin_ws/build/cpp_pkg/CMakeFiles/rebuild_cache.dir
+/root/catkin_ws/build/cpp_pkg/CMakeFiles/list_install_components.dir
+/root/catkin_ws/build/cpp_pkg/CMakeFiles/install.dir
+/root/catkin_ws/build/cpp_pkg/CMakeFiles/install/local.dir
+/root/catkin_ws/build/cpp_pkg/CMakeFiles/install/strip.dir
