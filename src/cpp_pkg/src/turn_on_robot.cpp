@@ -67,15 +67,15 @@ RetCode turn_on_robot::execSet_Reach_Fwd()
     RCLCPP_INFO(this->get_logger(),"execSet_Reach_Fwd");   
     SerialFrame frame(Mode_Reach_Fwd);
 
-    int16_t vx = static_cast<int16_t>(m_param.x_linear);
-    int16_t vz = static_cast<int16_t>(m_param.z_angular);
+    // int16_t vx = static_cast<int16_t>(m_param.x_linear);
+    // int16_t vz = static_cast<int16_t>(m_param.z_angular);
 
-    frame.set_data({
-        static_cast<uint8_t>((vx >> 8) & 0xFF),
-        static_cast<uint8_t>( vx       & 0xFF),
-        static_cast<uint8_t>((vz >> 8) & 0xFF),
-        static_cast<uint8_t>( vz       & 0xFF),
-    });
+    // frame.set_data({
+    //     static_cast<uint8_t>((vx >> 8) & 0xFF),
+    //     static_cast<uint8_t>( vx       & 0xFF),
+    //     static_cast<uint8_t>((vz >> 8) & 0xFF),
+    //     static_cast<uint8_t>( vz       & 0xFF),
+    // });
 
     auto bytes = frame.to_bytes();
     SerialPortImpl::instance().write_bytes(bytes.data(), bytes.size());
@@ -87,15 +87,15 @@ RetCode turn_on_robot::execSet_Wave()
   RCLCPP_INFO(this->get_logger(),"execSet_Wave");   
   SerialFrame frame(Mode_Wave);
 
-    int16_t vx = static_cast<int16_t>(m_param.x_linear);
-    int16_t vz = static_cast<int16_t>(m_param.z_angular);
+    // int16_t vx = static_cast<int16_t>(m_param.x_linear);
+    // int16_t vz = static_cast<int16_t>(m_param.z_angular);
 
-    frame.set_data({
-      static_cast<uint8_t>((vx >> 8) & 0xFF),
-      static_cast<uint8_t>( vx       & 0xFF),
-      static_cast<uint8_t>((vz >> 8) & 0xFF),
-      static_cast<uint8_t>( vz       & 0xFF),
-    });
+    // frame.set_data({
+    //   static_cast<uint8_t>((vx >> 8) & 0xFF),
+    //   static_cast<uint8_t>( vx       & 0xFF),
+    //   static_cast<uint8_t>((vz >> 8) & 0xFF),
+    //   static_cast<uint8_t>( vz       & 0xFF),
+    // });
 
     auto bytes = frame.to_bytes();
     SerialPortImpl::instance().write_bytes(bytes.data(), bytes.size());
@@ -107,15 +107,15 @@ RetCode turn_on_robot::execSet_Raise()
   RCLCPP_INFO(this->get_logger(),"execSet_Raise");  
   SerialFrame frame(Mode_Raise);
 
-    int16_t vx = static_cast<int16_t>(m_param.x_linear);
-    int16_t vz = static_cast<int16_t>(m_param.z_angular);
+    // int16_t vx = static_cast<int16_t>(m_param.x_linear);
+    // int16_t vz = static_cast<int16_t>(m_param.z_angular);
 
-    frame.set_data({
-        static_cast<uint8_t>((vx >> 8) & 0xFF),
-        static_cast<uint8_t>( vx       & 0xFF),
-        static_cast<uint8_t>((vz >> 8) & 0xFF),
-        static_cast<uint8_t>( vz       & 0xFF),
-    });
+    // frame.set_data({
+    //     static_cast<uint8_t>((vx >> 8) & 0xFF),
+    //     static_cast<uint8_t>( vx       & 0xFF),
+    //     static_cast<uint8_t>((vz >> 8) & 0xFF),
+    //     static_cast<uint8_t>( vz       & 0xFF),
+    // });
 
     auto bytes = frame.to_bytes();
     SerialPortImpl::instance().write_bytes(bytes.data(), bytes.size()); 
@@ -197,7 +197,7 @@ void turn_on_robot::Cmd_Hed_Callback(const geometry_msgs::msg::Twist::SharedPtr 
 
 /**************************************
 Function: 
-功能：Position话题订阅回调函数Callback，订阅到done指令后，随机选择一个动作执行，目前发送的一些预设好的指令给下位机
+功能：Position话题订阅回调函数Callback，订阅到done指令后，随机选择一个动作执行，发送对应的串口指令控制下位机
 ***************************************/
 void turn_on_robot::position_Callback(const std_msgs::msg::String::SharedPtr msg)
 {
@@ -210,10 +210,12 @@ void turn_on_robot::position_Callback(const std_msgs::msg::String::SharedPtr msg
       Params param;
       param.isValid   = true;
 
-      static thread_local std::mt19937 rng{std::random_device{}()};
+      std::random_device rd;
+      static thread_local std::mt19937 rng{rd()};
+
       static constexpr std::array<uint16_t, 3> modes = {Mode_Reach_Fwd, Mode_Wave, Mode_Raise};
-      std::uniform_int_distribution<std::size_t> dist(0, modes.size() - 1);
-      uint16_t Mode_Choice = modes[dist(rng)];
+      std::uniform_int_distribution<std::size_t> dist(0, modes.size() - 1); 
+      uint16_t Mode_Choice = modes[dist(rng)]; //随机选择一个动作
 
       Set_Config(Mode_Choice,param);
       Exec_parallelTask();

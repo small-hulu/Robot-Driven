@@ -1,0 +1,35 @@
+[0.056s] Invoking command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --build /home/sunrise/work/Robot-Driven/build/cpp_pkg -- -j8 -l8
+[0.384s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.234s] -- Found rclcpp: 16.0.14 (/opt/ros/humble/share/rclcpp/cmake)
+[1.412s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.431s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.473s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.542s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.627s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.853s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[1.863s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[2.359s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.694s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[2.785s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[3.240s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[3.241s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/sunrise/work/Robot-Driven/src/cpp_pkg/include>
+[3.241s] -- Configured cppcheck exclude dirs and/or files: 
+[3.244s] -- Added test 'flake8' to check Python code syntax and style conventions
+[3.247s] -- Added test 'lint_cmake' to check CMake code style
+[3.250s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[3.258s] -- Added test 'uncrustify' to check C / C++ code style
+[3.259s] -- Configured uncrustify additional arguments: 
+[3.261s] -- Added test 'xmllint' to check XML markup files
+[3.266s] -- Configuring done
+[3.375s] -- Generating done
+[3.397s] -- Build files have been written to: /home/sunrise/work/Robot-Driven/build/cpp_pkg
+[3.554s] [35m[1mConsolidate compiler generated dependencies of target driver_node[0m
+[3.742s] [ 16%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/publisher.cpp.o[0m
+[3.827s] [01m[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/publisher.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kpublisher.h: No such file or directory
+[3.828s]     1 | #include [01;31m[K"publisher.h"[m[K
+[3.828s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[3.829s] compilation terminated.
+[3.833s] gmake[2]: *** [CMakeFiles/driver_node.dir/build.make:118: CMakeFiles/driver_node.dir/src/publisher.cpp.o] Error 1
+[3.835s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/driver_node.dir/all] Error 2
+[3.837s] gmake: *** [Makefile:146: all] Error 2
+[3.848s] Invoked command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg' returned '2': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --build /home/sunrise/work/Robot-Driven/build/cpp_pkg -- -j8 -l8

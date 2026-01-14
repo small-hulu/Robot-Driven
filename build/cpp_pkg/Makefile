@@ -282,6 +282,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/driver_node.dir/build.make CMakeFiles/driver_node.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/publisher.o: src/publisher.cpp.o
+.PHONY : src/publisher.o
+
+# target to build an object file
+src/publisher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/driver_node.dir/build.make CMakeFiles/driver_node.dir/src/publisher.cpp.o
+.PHONY : src/publisher.cpp.o
+
+src/publisher.i: src/publisher.cpp.i
+.PHONY : src/publisher.i
+
+# target to preprocess a source file
+src/publisher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/driver_node.dir/build.make CMakeFiles/driver_node.dir/src/publisher.cpp.i
+.PHONY : src/publisher.cpp.i
+
+src/publisher.s: src/publisher.cpp.s
+.PHONY : src/publisher.s
+
+# target to generate assembly for a file
+src/publisher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/driver_node.dir/build.make CMakeFiles/driver_node.dir/src/publisher.cpp.s
+.PHONY : src/publisher.cpp.s
+
 src/turn_on_robot.o: src/turn_on_robot.cpp.o
 .PHONY : src/turn_on_robot.o
 
@@ -331,6 +355,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/publisher.o"
+	@echo "... src/publisher.i"
+	@echo "... src/publisher.s"
 	@echo "... src/turn_on_robot.o"
 	@echo "... src/turn_on_robot.i"
 	@echo "... src/turn_on_robot.s"

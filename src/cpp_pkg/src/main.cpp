@@ -1,5 +1,6 @@
 #include "cpp_pkg/turn_on_robot.h"
 #include "cpp_pkg/SerialPortImpl.h"
+#include "cpp_pkg/publisher.h"
 #include <iostream>
 #include <vector>
 #include <cstdint>
@@ -54,12 +55,15 @@ int main(int argc, char *argv[])
 
     serial.Set_info(info);
     
+    auto IMU_node = std::make_shared<Publisher>();
+
     serial.set_recv_callback(
-        [](const std::string& frame) {
+        [&IMU_node](const std::string& frame) {
             //处理下位机来的信息
             //RCLCPP_INFO(rclcpp::get_logger("rx"),"RX: %s", frame.c_str());
             RCLCPP_INFO(rclcpp::get_logger("serial_rx"),"RX: %s",bytes_to_hex(frame).c_str());
             RCLCPP_INFO(rclcpp::get_logger("serial_rx"),"---------------------------");
+            IMU_node->publish_data(bytes_to_hex(frame));
         }
     );
     serial.open();
@@ -69,6 +73,7 @@ int main(int argc, char *argv[])
     robot_node->start();
     
     rclcpp::spin(robot_node);
+    rclcpp::spin(IMU_node);
     rclcpp::shutdown();
     return 0;
 }

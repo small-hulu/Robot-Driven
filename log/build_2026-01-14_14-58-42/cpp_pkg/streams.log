@@ -1,0 +1,29 @@
+[0.053s] Invoking command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --build /home/sunrise/work/Robot-Driven/build/cpp_pkg -- -j8 -l8
+[0.351s] [ 16%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/publisher.cpp.o[0m
+[28.170s] [ 33%] [32m[1mLinking CXX executable driver_node[0m
+[33.311s] [100%] Built target driver_node
+[33.372s] Invoked command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --build /home/sunrise/work/Robot-Driven/build/cpp_pkg -- -j8 -l8
+[33.432s] Invoking command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --install /home/sunrise/work/Robot-Driven/build/cpp_pkg
+[33.471s] -- Install configuration: ""
+[33.473s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/lib/cpp_pkg/driver_node
+[33.520s] -- Set runtime path of "/home/sunrise/work/Robot-Driven/install/cpp_pkg/lib/cpp_pkg/driver_node" to "/usr/local/lib"
+[33.521s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/launch
+[33.522s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/launch/__pycache__
+[33.522s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/launch/__pycache__/turn_on_robot.launch.cpython-310.pyc
+[33.523s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/launch/turn_on_robot.launch.py
+[33.523s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/ament_index/resource_index/package_run_dependencies/cpp_pkg
+[33.524s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/ament_index/resource_index/parent_prefix_path/cpp_pkg
+[33.525s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.sh
+[33.527s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.dsv
+[33.528s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/environment/path.sh
+[33.530s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/environment/path.dsv
+[33.531s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/local_setup.bash
+[33.532s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/local_setup.sh
+[33.532s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/local_setup.zsh
+[33.533s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/local_setup.dsv
+[33.534s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/package.dsv
+[33.534s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/ament_index/resource_index/packages/cpp_pkg
+[33.535s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig.cmake
+[33.535s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig-version.cmake
+[33.536s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/package.xml
+[33.547s] Invoked command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --install /home/sunrise/work/Robot-Driven/build/cpp_pkg
