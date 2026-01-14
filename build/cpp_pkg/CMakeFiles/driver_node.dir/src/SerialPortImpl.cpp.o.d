@@ -1,7 +1,7 @@
 CMakeFiles/driver_node.dir/src/SerialPortImpl.cpp.o: \
- /root/catkin_ws/src/cpp_pkg/src/SerialPortImpl.cpp \
+ /home/sunrise/work/Robot-Driven/src/cpp_pkg/src/SerialPortImpl.cpp \
  /usr/include/stdc-predef.h \
- /root/catkin_ws/src/cpp_pkg/include/cpp_pkg/SerialPortImpl.h \
+ /home/sunrise/work/Robot-Driven/src/cpp_pkg/include/cpp_pkg/SerialPortImpl.h \
  /usr/local/include/serial/serial.h /usr/include/c++/11/limits \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h \

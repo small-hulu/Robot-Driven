@@ -4,6 +4,8 @@
 #include "cpp_pkg/IDeviceThread.h"
 #include "cpp_pkg/serial_frame.h"
 #include "std_msgs/msg/string.hpp"
+#include <random>
+#include <array>
 class turn_on_robot: 
     public rclcpp::Node,
     public IDeviceThread {

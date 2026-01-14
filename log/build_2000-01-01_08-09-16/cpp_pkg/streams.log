@@ -1,0 +1,10 @@
+[0.055s] Invoking command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --build /home/sunrise/work/Robot-Driven/build/cpp_pkg -- -j8 -l8
+[0.114s] gmake: Warning: File 'Makefile' has modification time 821600035 s in the future
+[0.275s] gmake[1]: Warning: File 'CMakeFiles/Makefile2' has modification time 821600035 s in the future
+[0.281s] gmake[2]: Warning: File 'CMakeFiles/driver_node.dir/flags.make' has modification time 821600035 s in the future
+[0.322s] gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
+[0.328s] gmake[2]: Warning: File 'CMakeFiles/driver_node.dir/flags.make' has modification time 821600035 s in the future
+[0.365s] [ 40%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/main.cpp.o[0m
+[0.367s] [ 40%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/SerialPortImpl.cpp.o[0m
+[0.367s] [ 60%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/IDeviceThread.cpp.o[0m
+[0.368s] [ 80%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o[0m

@@ -1,0 +1,10 @@
+gmake: Warning: File 'Makefile' has modification time 821600035 s in the future
+gmake[1]: Warning: File 'CMakeFiles/Makefile2' has modification time 821600035 s in the future
+gmake[2]: Warning: File 'CMakeFiles/driver_node.dir/flags.make' has modification time 821600035 s in the future
+gmake[2]: warning:  Clock skew detected.  Your build may be incomplete.
+gmake[2]: Warning: File 'CMakeFiles/driver_node.dir/flags.make' has modification time 821600035 s in the future
+[ 40%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/main.cpp.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/SerialPortImpl.cpp.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/IDeviceThread.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o[0m
+[01m[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/SerialPortImpl.cpp:[m[K In member function ‘[01m[Kvoid SerialPortImpl::parse_frame(std::string&)[m[K’:

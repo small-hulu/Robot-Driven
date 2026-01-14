@@ -98,13 +98,13 @@
 		{
 			"backtrace" : 9,
 			"isGenerated" : true,
-			"path" : "/root/catkin_ws/build/cpp_pkg/CMakeFiles/cpp_pkg_uninstall",
+			"path" : "/home/sunrise/work/Robot-Driven/build/cpp_pkg/CMakeFiles/cpp_pkg_uninstall",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "/root/catkin_ws/build/cpp_pkg/CMakeFiles/cpp_pkg_uninstall.rule",
+			"path" : "/home/sunrise/work/Robot-Driven/build/cpp_pkg/CMakeFiles/cpp_pkg_uninstall.rule",
 			"sourceGroupIndex" : 1
 		}
 	],

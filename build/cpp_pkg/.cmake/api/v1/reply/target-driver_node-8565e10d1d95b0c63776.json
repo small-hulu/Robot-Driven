@@ -117,7 +117,7 @@
 			[
 				{
 					"backtrace" : 8,
-					"path" : "/root/catkin_ws/src/cpp_pkg/include"
+					"path" : "/home/sunrise/work/Robot-Driven/src/cpp_pkg/include"
 				},
 				{
 					"backtrace" : 9,
@@ -277,7 +277,7 @@
 		],
 		"prefix" : 
 		{
-			"path" : "/root/catkin_ws/install/cpp_pkg"
+			"path" : "/home/sunrise/work/Robot-Driven/install/cpp_pkg"
 		}
 	},
 	"link" : 

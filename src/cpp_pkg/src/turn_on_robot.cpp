@@ -29,7 +29,7 @@ turn_on_robot::turn_on_robot()
   
   // position 订阅
   Position_Sub = create_subscription<std_msgs::msg::String>(
-      "position", 2, std::bind(&turn_on_robot::position_Callback, this, std::placeholders::_1));
+      "position", 2, std::bind(&turn_on_robot::position_Callback, this, _1));
   RCLCPP_INFO(this->get_logger(),"turn_on_robot Data ready");   
 }
 
@@ -64,8 +64,8 @@ RetCode turn_on_robot::execSet_XZMove()
 
 RetCode turn_on_robot::execSet_Reach_Fwd()
 {
-  RCLCPP_INFO(this->get_logger(),"execSet_Reach_Fwd");   
-  SerialFrame frame(Mode_Reach_Fwd);
+    RCLCPP_INFO(this->get_logger(),"execSet_Reach_Fwd");   
+    SerialFrame frame(Mode_Reach_Fwd);
 
     int16_t vx = static_cast<int16_t>(m_param.x_linear);
     int16_t vz = static_cast<int16_t>(m_param.z_angular);
@@ -79,7 +79,7 @@ RetCode turn_on_robot::execSet_Reach_Fwd()
 
     auto bytes = frame.to_bytes();
     SerialPortImpl::instance().write_bytes(bytes.data(), bytes.size());
-  return RetCode::Success;
+    return RetCode::Success;
 }
 
 RetCode turn_on_robot::execSet_Wave()
@@ -87,15 +87,15 @@ RetCode turn_on_robot::execSet_Wave()
   RCLCPP_INFO(this->get_logger(),"execSet_Wave");   
   SerialFrame frame(Mode_Wave);
 
-    // int16_t vx = static_cast<int16_t>(m_param.x_linear);
-    // int16_t vz = static_cast<int16_t>(m_param.z_angular);
+    int16_t vx = static_cast<int16_t>(m_param.x_linear);
+    int16_t vz = static_cast<int16_t>(m_param.z_angular);
 
-    // frame.set_data({
-    //     static_cast<uint8_t>((vx >> 8) & 0xFF),
-    //     static_cast<uint8_t>( vx       & 0xFF),
-    //     static_cast<uint8_t>((vz >> 8) & 0xFF),
-    //     static_cast<uint8_t>( vz       & 0xFF),
-    // });
+    frame.set_data({
+      static_cast<uint8_t>((vx >> 8) & 0xFF),
+      static_cast<uint8_t>( vx       & 0xFF),
+      static_cast<uint8_t>((vz >> 8) & 0xFF),
+      static_cast<uint8_t>( vz       & 0xFF),
+    });
 
     auto bytes = frame.to_bytes();
     SerialPortImpl::instance().write_bytes(bytes.data(), bytes.size());
@@ -177,7 +177,7 @@ Function: The Head topic subscription Callback function, according to the subscr
 ***************************************/
 void turn_on_robot::Cmd_Hed_Callback(const geometry_msgs::msg::Twist::SharedPtr twist_aux)
 {
-    
+
     static geometry_msgs::msg::Twist last_twist;
 
     if (twist_aux->angular.z  == last_twist.angular.z &&
@@ -195,16 +195,27 @@ void turn_on_robot::Cmd_Hed_Callback(const geometry_msgs::msg::Twist::SharedPtr 
     Exec_parallelTask();
 }
 
+/**************************************
+Function: 
+功能：Position话题订阅回调函数Callback，订阅到done指令后，随机选择一个动作执行，目前发送的一些预设好的指令给下位机
+***************************************/
 void turn_on_robot::position_Callback(const std_msgs::msg::String::SharedPtr msg)
 {
     RCLCPP_INFO(this->get_logger(), "Received position: '%s'", msg->data.c_str());
+    if (msg->data != "done") return;
 
-    if (msg->data == "done") {
+    if (msg->data == "done") { 
       RCLCPP_INFO(this->get_logger(), "Position command done received!");
       //三选一
       Params param;
       param.isValid   = true;
-      Set_Config(Mode_Wave,param);
+
+      static thread_local std::mt19937 rng{std::random_device{}()};
+      static constexpr std::array<uint16_t, 3> modes = {Mode_Reach_Fwd, Mode_Wave, Mode_Raise};
+      std::uniform_int_distribution<std::size_t> dist(0, modes.size() - 1);
+      uint16_t Mode_Choice = modes[dist(rng)];
+
+      Set_Config(Mode_Choice,param);
       Exec_parallelTask();
     }
 }
