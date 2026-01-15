@@ -203,21 +203,19 @@ void turn_on_robot::position_Callback(const std_msgs::msg::String::SharedPtr msg
 {
     RCLCPP_INFO(this->get_logger(), "Received position: '%s'", msg->data.c_str());
     if (msg->data != "done") return;
+    
+    RCLCPP_INFO(this->get_logger(), "Position command done received!");
+    //三选一
+    Params param;
+    param.isValid   = true;
 
-    if (msg->data == "done") { 
-      RCLCPP_INFO(this->get_logger(), "Position command done received!");
-      //三选一
-      Params param;
-      param.isValid   = true;
+    std::random_device rd;
+    static thread_local std::mt19937 rng{rd()};
 
-      std::random_device rd;
-      static thread_local std::mt19937 rng{rd()};
+    static constexpr std::array<uint16_t, 3> modes = {Mode_Reach_Fwd, Mode_Wave, Mode_Raise};
+    std::uniform_int_distribution<std::size_t> dist(0, modes.size() - 1); 
+    uint16_t Mode_Choice = modes[dist(rng)]; //随机选择一个动作
 
-      static constexpr std::array<uint16_t, 3> modes = {Mode_Reach_Fwd, Mode_Wave, Mode_Raise};
-      std::uniform_int_distribution<std::size_t> dist(0, modes.size() - 1); 
-      uint16_t Mode_Choice = modes[dist(rng)]; //随机选择一个动作
-
-      Set_Config(Mode_Choice,param);
-      Exec_parallelTask();
-    }
+    Set_Config(Mode_Choice,param);
+    Exec_parallelTask();
 }
