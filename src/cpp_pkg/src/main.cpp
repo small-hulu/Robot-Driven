@@ -51,6 +51,7 @@ struct ImuData
     int16_t gx;
     int16_t gy;
     int16_t gz;
+    bool is_valid = false; 
 
     void print() const {
         RCLCPP_INFO(rclcpp::get_logger("imu_data"),
@@ -63,8 +64,8 @@ ImuData parse_imu_data(const std::string& frame)
 {
     ImuData imu;
     uint8_t length = static_cast<uint8_t>(frame[1]) - 1; //减去命令字节的长度
-    if (length != 12) {
-        throw std::runtime_error("Frame too short to contain IMU data");
+    if (frame[2] != 0x11) {
+        return imu; //返回空数据
     }
     std::string imu_data = frame.substr(3, length); //imu数据
 
@@ -85,6 +86,8 @@ ImuData parse_imu_data(const std::string& frame)
 
     imu.gz = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[10])) << 8) 
            | static_cast<uint8_t>(imu_data[11]);
+
+    imu.is_valid = true;
     return imu;
 }
 
@@ -108,6 +111,9 @@ int main(int argc, char *argv[])
             //RCLCPP_INFO(rclcpp::get_logger("serial_rx"),"RX: %s",bytes_to_hex(frame).c_str());
             //RCLCPP_INFO(rclcpp::get_logger("serial_rx"),"---------------------------");
             ImuData imu_data = parse_imu_data(frame);
+            if (!imu_data.is_valid) {
+                return;
+            }
             imu_data.print();
             if(imu_data.az > 1050){
                 RCLCPP_WARN(rclcpp::get_logger("imu_data"),"az > 1050! ********************** az = %d", imu_data.az);

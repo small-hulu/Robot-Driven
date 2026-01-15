@@ -1,6 +1,6 @@
 #!/bin/bash
 source /opt/tros/humble/setup.sh
-TOPIC="/IMU_data_topic"
+TOPIC="/hug"
 
 while true; do
   echo "$(date '+%Y-%m-%d %H:%M:%S') -----------------------------------"

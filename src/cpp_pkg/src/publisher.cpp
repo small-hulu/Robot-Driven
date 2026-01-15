@@ -4,7 +4,7 @@ Publisher::Publisher()
     : Node("IMU_data_publisher")
 {
     // 创建一个发布者，发布到话题 IMU_data_topic
-    publisher_ = this->create_publisher<std_msgs::msg::String>("IMU_data_topic", 10);
+    publisher_ = this->create_publisher<std_msgs::msg::String>("hug", 10);
 }
 
 // 发布数据
