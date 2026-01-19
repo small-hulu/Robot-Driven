@@ -1,0 +1,190 @@
+[0.000000] (-) TimerEvent: {}
+[0.001136] (-) JobUnselected: {'identifier': 'robot_app_pkg'}
+[0.002139] (cpp_pkg) JobQueued: {'identifier': 'cpp_pkg', 'dependencies': OrderedDict()}
+[0.002803] (cpp_pkg) JobStarted: {'identifier': 'cpp_pkg'}
+[0.032723] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'cmake'}
+[0.034809] (cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '/home/sunrise/work/Robot-Driven/src/cpp_pkg', '-DCMAKE_INSTALL_PREFIX=/home/sunrise/work/Robot-Driven/install/cpp_pkg'], 'cwd': '/home/sunrise/work/Robot-Driven/build/cpp_pkg', 'env': OrderedDict([('LANGUAGE', 'en_US.UTF-8'), ('USER', 'sunrise'), ('SSH_CLIENT', '192.168.11.14 59719 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/hobot/lib:/app/lib:/app/pub/lib:/middleware/lib:/middleware/pub/lib:/usr/hobot/lib/sensor:/system/lib:/system/usr/lib:/lib:'), ('BROWSER', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/sunrise'), ('OLDPWD', '/home/sunrise/work/Robot-Driven'), ('TERM_PROGRAM_VERSION', '1.108.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-a083b6bb-309b-4de7-9a62-bfb957a4df3a.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sunrise'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('ROS_LOCALHOST_ONLY', '0'), ('HISTCONTROL', 'ignorespace'), ('PATH', '/opt/ros/humble/bin:/home/sunrise/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/sunrise/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli:/usr/hobot/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-717c17558c.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('GIT_PAGER', 'cat'), ('PWD', '/home/sunrise/work/Robot-Driven/build/cpp_pkg'), ('SSH_CONNECTION', '192.168.11.14 59719 192.168.11.12 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.098965] (-) TimerEvent: {}
+[0.199797] (-) TimerEvent: {}
+[0.300646] (-) TimerEvent: {}
+[0.401519] (-) TimerEvent: {}
+[0.502407] (-) TimerEvent: {}
+[0.603299] (-) TimerEvent: {}
+[0.686105] (cpp_pkg) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.2.0\n'}
+[0.703441] (-) TimerEvent: {}
+[0.804232] (-) TimerEvent: {}
+[0.905171] (-) TimerEvent: {}
+[1.005997] (-) TimerEvent: {}
+[1.106819] (-) TimerEvent: {}
+[1.167442] (cpp_pkg) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.2.0\n'}
+[1.206981] (-) TimerEvent: {}
+[1.212330] (cpp_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[1.307173] (-) TimerEvent: {}
+[1.408009] (-) TimerEvent: {}
+[1.508879] (-) TimerEvent: {}
+[1.570798] (cpp_pkg) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[1.609051] (-) TimerEvent: {}
+[1.617852] (cpp_pkg) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[1.619735] (cpp_pkg) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[1.623035] (cpp_pkg) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[1.643174] (cpp_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.709255] (-) TimerEvent: {}
+[1.810136] (-) TimerEvent: {}
+[1.911154] (-) TimerEvent: {}
+[2.012081] (-) TimerEvent: {}
+[2.048992] (cpp_pkg) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[2.097148] (cpp_pkg) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[2.098378] (cpp_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[2.100778] (cpp_pkg) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[2.111039] (cpp_pkg) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[2.112179] (-) TimerEvent: {}
+[2.212900] (-) TimerEvent: {}
+[2.313854] (-) TimerEvent: {}
+[2.414856] (-) TimerEvent: {}
+[2.515765] (-) TimerEvent: {}
+[2.616651] (-) TimerEvent: {}
+[2.717587] (-) TimerEvent: {}
+[2.818414] (-) TimerEvent: {}
+[2.919261] (-) TimerEvent: {}
+[3.020219] (-) TimerEvent: {}
+[3.121061] (-) TimerEvent: {}
+[3.221877] (-) TimerEvent: {}
+[3.322702] (-) TimerEvent: {}
+[3.423591] (-) TimerEvent: {}
+[3.524512] (-) TimerEvent: {}
+[3.625411] (-) TimerEvent: {}
+[3.726200] (-) TimerEvent: {}
+[3.826996] (-) TimerEvent: {}
+[3.927793] (-) TimerEvent: {}
+[4.028607] (-) TimerEvent: {}
+[4.129412] (-) TimerEvent: {}
+[4.230206] (-) TimerEvent: {}
+[4.323763] (cpp_pkg) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[4.330340] (-) TimerEvent: {}
+[4.431086] (-) TimerEvent: {}
+[4.531867] (-) TimerEvent: {}
+[4.632683] (-) TimerEvent: {}
+[4.733516] (-) TimerEvent: {}
+[4.814495] (cpp_pkg) StdoutLine: {'line': b'-- Found rclcpp: 16.0.14 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[4.833713] (-) TimerEvent: {}
+[4.934561] (-) TimerEvent: {}
+[5.027138] (cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[5.034733] (-) TimerEvent: {}
+[5.052157] (cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[5.099534] (cpp_pkg) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[5.134928] (-) TimerEvent: {}
+[5.174334] (cpp_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[5.235114] (-) TimerEvent: {}
+[5.269405] (cpp_pkg) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[5.335312] (-) TimerEvent: {}
+[5.436162] (-) TimerEvent: {}
+[5.518195] (cpp_pkg) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[5.531746] (cpp_pkg) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[5.536280] (-) TimerEvent: {}
+[5.637051] (-) TimerEvent: {}
+[5.737913] (-) TimerEvent: {}
+[5.838751] (-) TimerEvent: {}
+[5.939643] (-) TimerEvent: {}
+[5.944477] (cpp_pkg) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[6.039841] (-) TimerEvent: {}
+[6.069220] (cpp_pkg) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[6.140043] (-) TimerEvent: {}
+[6.240916] (-) TimerEvent: {}
+[6.252629] (cpp_pkg) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[6.298497] (cpp_pkg) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[6.341117] (-) TimerEvent: {}
+[6.441976] (-) TimerEvent: {}
+[6.542843] (-) TimerEvent: {}
+[6.643755] (-) TimerEvent: {}
+[6.677992] (cpp_pkg) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[6.679980] (cpp_pkg) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[6.743958] (-) TimerEvent: {}
+[6.844904] (-) TimerEvent: {}
+[6.945802] (-) TimerEvent: {}
+[7.046759] (-) TimerEvent: {}
+[7.074220] (cpp_pkg) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[7.079372] (cpp_pkg) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[7.146957] (-) TimerEvent: {}
+[7.247894] (-) TimerEvent: {}
+[7.348867] (-) TimerEvent: {}
+[7.449791] (-) TimerEvent: {}
+[7.472046] (cpp_pkg) StdoutLine: {'line': b'-- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[7.549991] (-) TimerEvent: {}
+[7.596823] (cpp_pkg) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[7.650194] (-) TimerEvent: {}
+[7.751122] (-) TimerEvent: {}
+[7.851997] (-) TimerEvent: {}
+[7.952883] (-) TimerEvent: {}
+[8.053769] (-) TimerEvent: {}
+[8.131475] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[8.132588] (cpp_pkg) StdoutLine: {'line': b'-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/sunrise/work/Robot-Driven/src/cpp_pkg/include>\n'}
+[8.133409] (cpp_pkg) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[8.136656] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[8.140882] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[8.144417] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[8.151613] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[8.152475] (cpp_pkg) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[8.153891] (-) TimerEvent: {}
+[8.155247] (cpp_pkg) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[8.165186] (cpp_pkg) StdoutLine: {'line': b'-- Configuring done\n'}
+[8.222751] (cpp_pkg) StdoutLine: {'line': b'-- Generating done\n'}
+[8.245815] (cpp_pkg) StdoutLine: {'line': b'-- Build files have been written to: /home/sunrise/work/Robot-Driven/build/cpp_pkg\n'}
+[8.254069] (-) TimerEvent: {}
+[8.316052] (cpp_pkg) CommandEnded: {'returncode': 0}
+[8.319301] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'build'}
+[8.323874] (cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sunrise/work/Robot-Driven/build/cpp_pkg', '--', '-j8', '-l8'], 'cwd': '/home/sunrise/work/Robot-Driven/build/cpp_pkg', 'env': OrderedDict([('LANGUAGE', 'en_US.UTF-8'), ('USER', 'sunrise'), ('SSH_CLIENT', '192.168.11.14 59719 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/hobot/lib:/app/lib:/app/pub/lib:/middleware/lib:/middleware/pub/lib:/usr/hobot/lib/sensor:/system/lib:/system/usr/lib:/lib:'), ('BROWSER', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/sunrise'), ('OLDPWD', '/home/sunrise/work/Robot-Driven'), ('TERM_PROGRAM_VERSION', '1.108.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-a083b6bb-309b-4de7-9a62-bfb957a4df3a.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sunrise'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('ROS_LOCALHOST_ONLY', '0'), ('HISTCONTROL', 'ignorespace'), ('PATH', '/opt/ros/humble/bin:/home/sunrise/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/sunrise/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli:/usr/hobot/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-717c17558c.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('GIT_PAGER', 'cat'), ('PWD', '/home/sunrise/work/Robot-Driven/build/cpp_pkg'), ('SSH_CONNECTION', '192.168.11.14 59719 192.168.11.12 22'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[8.354242] (-) TimerEvent: {}
+[8.455258] (-) TimerEvent: {}
+[8.553329] (cpp_pkg) StdoutLine: {'line': b'[ 20%] \x1b[32mBuilding CXX object CMakeFiles/driver_node.dir/src/SerialPortImpl.cpp.o\x1b[0m\n'}
+[8.555608] (-) TimerEvent: {}
+[8.559190] (cpp_pkg) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/driver_node.dir/src/IDeviceThread.cpp.o\x1b[0m\n'}
+[8.560234] (cpp_pkg) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o\x1b[0m\n'}
+[8.561032] (cpp_pkg) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding CXX object CMakeFiles/driver_node.dir/src/main.cpp.o\x1b[0m\n'}
+[8.627264] (cpp_pkg) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/SerialPortImpl.cpp:1\x1b[m\x1b[K:\n'}
+[8.628505] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/include/cpp_pkg/SerialPortImpl.h:4:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kserial/serial.h: No such file or directory\n'}
+[8.629387] (cpp_pkg) StderrLine: {'line': b'    4 | #include \x1b[01;31m\x1b[K<serial/serial.h>\x1b[m\x1b[K\n'}
+[8.630124] (cpp_pkg) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[8.630843] (cpp_pkg) StderrLine: {'line': b'compilation terminated.\n'}
+[8.639330] (cpp_pkg) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/driver_node.dir/build.make:90: CMakeFiles/driver_node.dir/src/SerialPortImpl.cpp.o] Error 1\n'}
+[8.640257] (cpp_pkg) StderrLine: {'line': b'gmake[2]: *** Waiting for unfinished jobs....\n'}
+[8.655848] (-) TimerEvent: {}
+[8.756860] (-) TimerEvent: {}
+[8.857819] (-) TimerEvent: {}
+[8.958718] (-) TimerEvent: {}
+[9.059623] (-) TimerEvent: {}
+[9.120261] (cpp_pkg) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/include/cpp_pkg/IDeviceThread.h:11\x1b[m\x1b[K,\n'}
+[9.121229] (cpp_pkg) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/IDeviceThread.cpp:1\x1b[m\x1b[K:\n'}
+[9.121918] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/include/cpp_pkg/SerialPortImpl.h:4:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kserial/serial.h: No such file or directory\n'}
+[9.122596] (cpp_pkg) StderrLine: {'line': b'    4 | #include \x1b[01;31m\x1b[K<serial/serial.h>\x1b[m\x1b[K\n'}
+[9.123317] (cpp_pkg) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[9.123950] (cpp_pkg) StderrLine: {'line': b'compilation terminated.\n'}
+[9.132410] (cpp_pkg) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/driver_node.dir/build.make:76: CMakeFiles/driver_node.dir/src/IDeviceThread.cpp.o] Error 1\n'}
+[9.159885] (-) TimerEvent: {}
+[9.261134] (-) TimerEvent: {}
+[9.362084] (-) TimerEvent: {}
+[9.462979] (-) TimerEvent: {}
+[9.563890] (-) TimerEvent: {}
+[9.664818] (-) TimerEvent: {}
+[9.765737] (-) TimerEvent: {}
+[9.866622] (-) TimerEvent: {}
+[9.967515] (-) TimerEvent: {}
+[10.051424] (cpp_pkg) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/include/cpp_pkg/turn_on_robot.h:3\x1b[m\x1b[K,\n'}
+[10.052389] (cpp_pkg) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/main.cpp:1\x1b[m\x1b[K:\n'}
+[10.053071] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/include/cpp_pkg/SerialPortImpl.h:4:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kserial/serial.h: No such file or directory\n'}
+[10.053708] (cpp_pkg) StderrLine: {'line': b'    4 | #include \x1b[01;31m\x1b[K<serial/serial.h>\x1b[m\x1b[K\n'}
+[10.054299] (cpp_pkg) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[10.054991] (cpp_pkg) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/include/cpp_pkg/turn_on_robot.h:3\x1b[m\x1b[K,\n'}
+[10.055653] (cpp_pkg) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/turn_on_robot.cpp:1\x1b[m\x1b[K:\n'}
+[10.056246] (cpp_pkg) StderrLine: {'line': b'\x1b[01m\x1b[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/include/cpp_pkg/SerialPortImpl.h:4:10:\x1b[m\x1b[K \x1b[01;31m\x1b[Kfatal error: \x1b[m\x1b[Kserial/serial.h: No such file or directory\n'}
+[10.056819] (cpp_pkg) StderrLine: {'line': b'    4 | #include \x1b[01;31m\x1b[K<serial/serial.h>\x1b[m\x1b[K\n'}
+[10.057363] (cpp_pkg) StderrLine: {'line': b'      |          \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[10.057895] (cpp_pkg) StderrLine: {'line': b'compilation terminated.\n'}
+[10.058416] (cpp_pkg) StderrLine: {'line': b'compilation terminated.\n'}
+[10.067390] (cpp_pkg) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/driver_node.dir/build.make:118: CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o] Error 1\n'}
+[10.068141] (-) TimerEvent: {}
+[10.070127] (cpp_pkg) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/driver_node.dir/build.make:104: CMakeFiles/driver_node.dir/src/main.cpp.o] Error 1\n'}
+[10.071102] (cpp_pkg) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/driver_node.dir/all] Error 2\n'}
+[10.071905] (cpp_pkg) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[10.080828] (cpp_pkg) CommandEnded: {'returncode': 2}
+[10.140183] (cpp_pkg) JobEnded: {'identifier': 'cpp_pkg', 'rc': 2}
+[10.152303] (-) EventReactorShutdown: {}

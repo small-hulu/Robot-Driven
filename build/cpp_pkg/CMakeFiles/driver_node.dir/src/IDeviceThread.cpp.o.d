@@ -1,7 +1,7 @@
 CMakeFiles/driver_node.dir/src/IDeviceThread.cpp.o: \
- /root/catkin_ws/src/cpp_pkg/src/IDeviceThread.cpp \
+ /home/sunrise/work/Robot-Driven/src/cpp_pkg/src/IDeviceThread.cpp \
  /usr/include/stdc-predef.h \
- /root/catkin_ws/src/cpp_pkg/include/cpp_pkg/IDeviceThread.h \
+ /home/sunrise/work/Robot-Driven/src/cpp_pkg/include/cpp_pkg/IDeviceThread.h \
  /usr/include/c++/11/atomic /usr/include/c++/11/bits/atomic_base.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/aarch64-linux-gnu/c++/11/bits/os_defines.h \
@@ -167,7 +167,7 @@ CMakeFiles/driver_node.dir/src/IDeviceThread.cpp.o: \
  /usr/include/c++/11/thread /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/cassert \
  /usr/include/assert.h \
- /root/catkin_ws/src/cpp_pkg/include/cpp_pkg/CRetCode.h \
+ /home/sunrise/work/Robot-Driven/src/cpp_pkg/include/cpp_pkg/CRetCode.h \
  /usr/include/c++/11/ostream /usr/include/c++/11/ios \
  /usr/include/c++/11/bits/ios_base.h \
  /usr/include/c++/11/bits/locale_classes.h \
@@ -182,7 +182,7 @@ CMakeFiles/driver_node.dir/src/IDeviceThread.cpp.o: \
  /usr/include/c++/11/bits/locale_facets.tcc \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc \
- /root/catkin_ws/src/cpp_pkg/include/cpp_pkg/SerialPortImpl.h \
+ /home/sunrise/work/Robot-Driven/src/cpp_pkg/include/cpp_pkg/SerialPortImpl.h \
  /usr/local/include/serial/serial.h /usr/include/c++/11/cstring \
  /usr/include/string.h /usr/include/strings.h /usr/include/c++/11/sstream \
  /usr/include/c++/11/istream /usr/include/c++/11/bits/istream.tcc \

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+source /opt/tros/humble/setup.sh 
 # ROS 2 topic
 TOPIC="/cmd_hed"
 

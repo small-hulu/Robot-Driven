@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /root/catkin_ws/src/cpp_pkg
+CMAKE_SOURCE_DIR = /home/sunrise/work/Robot-Driven/src/cpp_pkg
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /root/catkin_ws/build/cpp_pkg
+CMAKE_BINARY_DIR = /home/sunrise/work/Robot-Driven/build/cpp_pkg
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/cpp_pkg/CMakeFiles /root/catkin_ws/build/cpp_pkg//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sunrise/work/Robot-Driven/build/cpp_pkg/CMakeFiles /home/sunrise/work/Robot-Driven/build/cpp_pkg//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/catkin_ws/build/cpp_pkg/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/sunrise/work/Robot-Driven/build/cpp_pkg/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -282,6 +282,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/driver_node.dir/build.make CMakeFiles/driver_node.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/publisher.o: src/publisher.cpp.o
+.PHONY : src/publisher.o
+
+# target to build an object file
+src/publisher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/driver_node.dir/build.make CMakeFiles/driver_node.dir/src/publisher.cpp.o
+.PHONY : src/publisher.cpp.o
+
+src/publisher.i: src/publisher.cpp.i
+.PHONY : src/publisher.i
+
+# target to preprocess a source file
+src/publisher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/driver_node.dir/build.make CMakeFiles/driver_node.dir/src/publisher.cpp.i
+.PHONY : src/publisher.cpp.i
+
+src/publisher.s: src/publisher.cpp.s
+.PHONY : src/publisher.s
+
+# target to generate assembly for a file
+src/publisher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/driver_node.dir/build.make CMakeFiles/driver_node.dir/src/publisher.cpp.s
+.PHONY : src/publisher.cpp.s
+
 src/turn_on_robot.o: src/turn_on_robot.cpp.o
 .PHONY : src/turn_on_robot.o
 
@@ -331,6 +355,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/publisher.o"
+	@echo "... src/publisher.i"
+	@echo "... src/publisher.s"
 	@echo "... src/turn_on_robot.o"
 	@echo "... src/turn_on_robot.i"
 	@echo "... src/turn_on_robot.s"

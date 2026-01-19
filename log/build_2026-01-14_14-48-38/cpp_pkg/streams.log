@@ -1,0 +1,58 @@
+[0.038s] Invoking command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake /home/sunrise/work/Robot-Driven/src/cpp_pkg -DCMAKE_INSTALL_PREFIX=/home/sunrise/work/Robot-Driven/install/cpp_pkg
+[0.780s] -- The C compiler identification is GNU 11.2.0
+[1.206s] -- The CXX compiler identification is GNU 11.2.0
+[1.266s] -- Detecting C compiler ABI info
+[1.726s] -- Detecting C compiler ABI info - done
+[1.775s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.776s] -- Detecting C compile features
+[1.780s] -- Detecting C compile features - done
+[1.798s] -- Detecting CXX compiler ABI info
+[2.222s] -- Detecting CXX compiler ABI info - done
+[2.297s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.298s] -- Detecting CXX compile features
+[2.301s] -- Detecting CXX compile features - done
+[2.339s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[4.673s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[5.246s] -- Found rclcpp: 16.0.14 (/opt/ros/humble/share/rclcpp/cmake)
+[5.497s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[5.528s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[5.581s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[5.669s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.771s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[6.045s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[6.060s] -- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[6.637s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[6.768s] -- Found FastRTPS: /opt/ros/humble/include  
+[6.947s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[6.994s] -- Looking for pthread.h
+[7.385s] -- Looking for pthread.h - found
+[7.386s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[7.762s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[7.767s] -- Found Threads: TRUE  
+[8.120s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[8.229s] -- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[8.722s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[8.723s] -- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/sunrise/work/Robot-Driven/src/cpp_pkg/include>
+[8.723s] -- Configured cppcheck exclude dirs and/or files: 
+[8.726s] -- Added test 'flake8' to check Python code syntax and style conventions
+[8.730s] -- Added test 'lint_cmake' to check CMake code style
+[8.733s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[8.740s] -- Added test 'uncrustify' to check C / C++ code style
+[8.741s] -- Configured uncrustify additional arguments: 
+[8.744s] -- Added test 'xmllint' to check XML markup files
+[8.753s] -- Configuring done
+[8.804s] -- Generating done
+[8.828s] -- Build files have been written to: /home/sunrise/work/Robot-Driven/build/cpp_pkg
+[8.899s] Invoked command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake /home/sunrise/work/Robot-Driven/src/cpp_pkg -DCMAKE_INSTALL_PREFIX=/home/sunrise/work/Robot-Driven/install/cpp_pkg
+[8.909s] Invoking command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --build /home/sunrise/work/Robot-Driven/build/cpp_pkg -- -j8 -l8
+[9.130s] [ 66%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/main.cpp.o[0m
+[9.131s] [ 66%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/publisher.cpp.o[0m
+[9.131s] [ 66%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/IDeviceThread.cpp.o[0m
+[9.132s] [ 66%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/SerialPortImpl.cpp.o[0m
+[9.133s] [ 83%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o[0m
+[9.207s] [01m[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/publisher.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kpublisher.h: No such file or directory
+[9.207s]     1 | #include [01;31m[K"publisher.h"[m[K
+[9.208s]       |          [01;31m[K^~~~~~~~~~~~~[m[K
+[9.208s] compilation terminated.
+[9.266s] gmake[2]: *** [CMakeFiles/driver_node.dir/build.make:118: CMakeFiles/driver_node.dir/src/publisher.cpp.o] Error 1
+[9.266s] gmake[2]: *** Waiting for unfinished jobs....

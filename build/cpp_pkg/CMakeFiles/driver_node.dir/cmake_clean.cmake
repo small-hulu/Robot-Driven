@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/driver_node.dir/src/SerialPortImpl.cpp.o.d"
   "CMakeFiles/driver_node.dir/src/main.cpp.o"
   "CMakeFiles/driver_node.dir/src/main.cpp.o.d"
+  "CMakeFiles/driver_node.dir/src/publisher.cpp.o"
+  "CMakeFiles/driver_node.dir/src/publisher.cpp.o.d"
   "CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o"
   "CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o.d"
   "driver_node"

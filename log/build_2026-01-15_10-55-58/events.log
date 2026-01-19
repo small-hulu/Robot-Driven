@@ -1,0 +1,285 @@
+[0.000000] (-) TimerEvent: {}
+[0.001322] (-) JobUnselected: {'identifier': 'robot_app_pkg'}
+[0.002593] (cpp_pkg) JobQueued: {'identifier': 'cpp_pkg', 'dependencies': OrderedDict()}
+[0.003501] (cpp_pkg) JobStarted: {'identifier': 'cpp_pkg'}
+[0.040675] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'cmake'}
+[0.044552] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'build'}
+[0.048507] (cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/sunrise/work/Robot-Driven/build/cpp_pkg', '--', '-j8', '-l8'], 'cwd': '/home/sunrise/work/Robot-Driven/build/cpp_pkg', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'sunrise'), ('SSH_CLIENT', '172.16.10.180 51029 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/tros/humble/lib/aarch64-linux-gnu:/opt/tros/humble/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/hobot/lib:/app/lib:/app/pub/lib:/middleware/lib:/middleware/pub/lib:/usr/hobot/lib/sensor:/system/lib:/system/usr/lib:/lib:'), ('BROWSER', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/sunrise'), ('TERM_PROGRAM_VERSION', '1.108.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-576116f7-b60f-4644-ba4e-03207e7866cd.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/sunrise/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TROS_DISTRO', 'humble'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sunrise'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/tros/humble/bin:/opt/ros/humble/bin:/home/sunrise/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/sunrise/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli:/usr/hobot/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sunrise/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/sunrise/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-65c99da6c1ae1e55.txt'), ('LANG', 'en_US.UTF-8'), ('PYTHONSTARTUP', '/home/sunrise/.vscode-server/data/User/workspaceStorage/bcd90a8c86a59260238900bd8f37a988/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-f57eae96bf.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/tros/humble:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/sunrise/work/Robot-Driven/build/cpp_pkg'), ('SSH_CONNECTION', '172.16.10.180 51029 172.16.10.95 22'), ('PYTHONPATH', '/opt/tros/humble/lib/python3.10/site-packages:/opt/tros/humble/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/tros/humble:/opt/ros/humble')]), 'shell': False}
+[0.098865] (-) TimerEvent: {}
+[0.199711] (-) TimerEvent: {}
+[0.300604] (-) TimerEvent: {}
+[0.401560] (-) TimerEvent: {}
+[0.423652] (cpp_pkg) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/driver_node.dir/src/main.cpp.o\x1b[0m\n'}
+[0.501771] (-) TimerEvent: {}
+[0.602659] (-) TimerEvent: {}
+[0.703527] (-) TimerEvent: {}
+[0.804393] (-) TimerEvent: {}
+[0.905297] (-) TimerEvent: {}
+[1.006230] (-) TimerEvent: {}
+[1.107158] (-) TimerEvent: {}
+[1.208064] (-) TimerEvent: {}
+[1.308958] (-) TimerEvent: {}
+[1.409827] (-) TimerEvent: {}
+[1.510684] (-) TimerEvent: {}
+[1.611573] (-) TimerEvent: {}
+[1.712431] (-) TimerEvent: {}
+[1.813297] (-) TimerEvent: {}
+[1.914167] (-) TimerEvent: {}
+[2.015039] (-) TimerEvent: {}
+[2.115897] (-) TimerEvent: {}
+[2.216850] (-) TimerEvent: {}
+[2.317807] (-) TimerEvent: {}
+[2.418684] (-) TimerEvent: {}
+[2.519638] (-) TimerEvent: {}
+[2.620610] (-) TimerEvent: {}
+[2.721475] (-) TimerEvent: {}
+[2.822349] (-) TimerEvent: {}
+[2.923231] (-) TimerEvent: {}
+[3.024104] (-) TimerEvent: {}
+[3.124957] (-) TimerEvent: {}
+[3.225840] (-) TimerEvent: {}
+[3.326772] (-) TimerEvent: {}
+[3.427649] (-) TimerEvent: {}
+[3.528494] (-) TimerEvent: {}
+[3.629478] (-) TimerEvent: {}
+[3.730440] (-) TimerEvent: {}
+[3.831407] (-) TimerEvent: {}
+[3.932320] (-) TimerEvent: {}
+[4.033220] (-) TimerEvent: {}
+[4.134101] (-) TimerEvent: {}
+[4.235013] (-) TimerEvent: {}
+[4.336004] (-) TimerEvent: {}
+[4.436929] (-) TimerEvent: {}
+[4.537864] (-) TimerEvent: {}
+[4.638799] (-) TimerEvent: {}
+[4.739748] (-) TimerEvent: {}
+[4.840686] (-) TimerEvent: {}
+[4.941679] (-) TimerEvent: {}
+[5.042580] (-) TimerEvent: {}
+[5.143487] (-) TimerEvent: {}
+[5.244369] (-) TimerEvent: {}
+[5.345267] (-) TimerEvent: {}
+[5.446125] (-) TimerEvent: {}
+[5.547004] (-) TimerEvent: {}
+[5.647852] (-) TimerEvent: {}
+[5.748758] (-) TimerEvent: {}
+[5.849644] (-) TimerEvent: {}
+[5.950522] (-) TimerEvent: {}
+[6.051379] (-) TimerEvent: {}
+[6.152330] (-) TimerEvent: {}
+[6.253247] (-) TimerEvent: {}
+[6.354167] (-) TimerEvent: {}
+[6.455065] (-) TimerEvent: {}
+[6.555984] (-) TimerEvent: {}
+[6.656935] (-) TimerEvent: {}
+[6.757860] (-) TimerEvent: {}
+[6.858847] (-) TimerEvent: {}
+[6.959747] (-) TimerEvent: {}
+[7.060633] (-) TimerEvent: {}
+[7.161523] (-) TimerEvent: {}
+[7.262420] (-) TimerEvent: {}
+[7.363365] (-) TimerEvent: {}
+[7.464259] (-) TimerEvent: {}
+[7.565172] (-) TimerEvent: {}
+[7.666129] (-) TimerEvent: {}
+[7.767055] (-) TimerEvent: {}
+[7.867951] (-) TimerEvent: {}
+[7.968898] (-) TimerEvent: {}
+[8.069811] (-) TimerEvent: {}
+[8.170730] (-) TimerEvent: {}
+[8.271689] (-) TimerEvent: {}
+[8.372670] (-) TimerEvent: {}
+[8.473585] (-) TimerEvent: {}
+[8.574477] (-) TimerEvent: {}
+[8.675422] (-) TimerEvent: {}
+[8.776343] (-) TimerEvent: {}
+[8.877267] (-) TimerEvent: {}
+[8.978173] (-) TimerEvent: {}
+[9.079105] (-) TimerEvent: {}
+[9.180002] (-) TimerEvent: {}
+[9.280961] (-) TimerEvent: {}
+[9.381872] (-) TimerEvent: {}
+[9.482766] (-) TimerEvent: {}
+[9.583683] (-) TimerEvent: {}
+[9.684599] (-) TimerEvent: {}
+[9.785516] (-) TimerEvent: {}
+[9.886433] (-) TimerEvent: {}
+[9.987396] (-) TimerEvent: {}
+[10.088329] (-) TimerEvent: {}
+[10.189245] (-) TimerEvent: {}
+[10.290156] (-) TimerEvent: {}
+[10.391067] (-) TimerEvent: {}
+[10.491975] (-) TimerEvent: {}
+[10.592882] (-) TimerEvent: {}
+[10.693795] (-) TimerEvent: {}
+[10.794709] (-) TimerEvent: {}
+[10.895615] (-) TimerEvent: {}
+[10.996545] (-) TimerEvent: {}
+[11.097463] (-) TimerEvent: {}
+[11.198373] (-) TimerEvent: {}
+[11.299264] (-) TimerEvent: {}
+[11.400152] (-) TimerEvent: {}
+[11.501118] (-) TimerEvent: {}
+[11.602053] (-) TimerEvent: {}
+[11.702973] (-) TimerEvent: {}
+[11.803865] (-) TimerEvent: {}
+[11.904788] (-) TimerEvent: {}
+[12.005708] (-) TimerEvent: {}
+[12.106694] (-) TimerEvent: {}
+[12.207601] (-) TimerEvent: {}
+[12.308545] (-) TimerEvent: {}
+[12.409433] (-) TimerEvent: {}
+[12.510313] (-) TimerEvent: {}
+[12.611202] (-) TimerEvent: {}
+[12.712061] (-) TimerEvent: {}
+[12.812945] (-) TimerEvent: {}
+[12.913834] (-) TimerEvent: {}
+[13.014726] (-) TimerEvent: {}
+[13.115610] (-) TimerEvent: {}
+[13.216545] (-) TimerEvent: {}
+[13.317471] (-) TimerEvent: {}
+[13.418359] (-) TimerEvent: {}
+[13.519261] (-) TimerEvent: {}
+[13.620171] (-) TimerEvent: {}
+[13.721090] (-) TimerEvent: {}
+[13.821997] (-) TimerEvent: {}
+[13.922887] (-) TimerEvent: {}
+[14.023735] (-) TimerEvent: {}
+[14.124558] (-) TimerEvent: {}
+[14.225392] (-) TimerEvent: {}
+[14.326270] (-) TimerEvent: {}
+[14.427176] (-) TimerEvent: {}
+[14.528038] (-) TimerEvent: {}
+[14.628903] (-) TimerEvent: {}
+[14.729756] (-) TimerEvent: {}
+[14.830580] (-) TimerEvent: {}
+[14.931458] (-) TimerEvent: {}
+[15.032355] (-) TimerEvent: {}
+[15.133259] (-) TimerEvent: {}
+[15.234166] (-) TimerEvent: {}
+[15.335095] (-) TimerEvent: {}
+[15.436012] (-) TimerEvent: {}
+[15.536929] (-) TimerEvent: {}
+[15.637811] (-) TimerEvent: {}
+[15.738708] (-) TimerEvent: {}
+[15.839563] (-) TimerEvent: {}
+[15.940445] (-) TimerEvent: {}
+[16.041353] (-) TimerEvent: {}
+[16.142203] (-) TimerEvent: {}
+[16.243082] (-) TimerEvent: {}
+[16.344007] (-) TimerEvent: {}
+[16.444918] (-) TimerEvent: {}
+[16.545819] (-) TimerEvent: {}
+[16.646708] (-) TimerEvent: {}
+[16.747604] (-) TimerEvent: {}
+[16.848520] (-) TimerEvent: {}
+[16.949435] (-) TimerEvent: {}
+[17.050353] (-) TimerEvent: {}
+[17.151286] (-) TimerEvent: {}
+[17.252196] (-) TimerEvent: {}
+[17.353124] (-) TimerEvent: {}
+[17.454041] (-) TimerEvent: {}
+[17.554967] (-) TimerEvent: {}
+[17.655893] (-) TimerEvent: {}
+[17.756836] (-) TimerEvent: {}
+[17.857740] (-) TimerEvent: {}
+[17.958580] (-) TimerEvent: {}
+[18.059377] (-) TimerEvent: {}
+[18.160220] (-) TimerEvent: {}
+[18.261123] (-) TimerEvent: {}
+[18.362033] (-) TimerEvent: {}
+[18.462930] (-) TimerEvent: {}
+[18.563823] (-) TimerEvent: {}
+[18.664737] (-) TimerEvent: {}
+[18.765662] (-) TimerEvent: {}
+[18.866601] (-) TimerEvent: {}
+[18.967486] (-) TimerEvent: {}
+[19.068416] (-) TimerEvent: {}
+[19.169355] (-) TimerEvent: {}
+[19.170153] (cpp_pkg) StdoutLine: {'line': b'[ 33%] \x1b[32m\x1b[1mLinking CXX executable driver_node\x1b[0m\n'}
+[19.269593] (-) TimerEvent: {}
+[19.370540] (-) TimerEvent: {}
+[19.471476] (-) TimerEvent: {}
+[19.572495] (-) TimerEvent: {}
+[19.673406] (-) TimerEvent: {}
+[19.774349] (-) TimerEvent: {}
+[19.875280] (-) TimerEvent: {}
+[19.976259] (-) TimerEvent: {}
+[20.077256] (-) TimerEvent: {}
+[20.178335] (-) TimerEvent: {}
+[20.279509] (-) TimerEvent: {}
+[20.380583] (-) TimerEvent: {}
+[20.481583] (-) TimerEvent: {}
+[20.582514] (-) TimerEvent: {}
+[20.683568] (-) TimerEvent: {}
+[20.784647] (-) TimerEvent: {}
+[20.885621] (-) TimerEvent: {}
+[20.986621] (-) TimerEvent: {}
+[21.087539] (-) TimerEvent: {}
+[21.188458] (-) TimerEvent: {}
+[21.289408] (-) TimerEvent: {}
+[21.390410] (-) TimerEvent: {}
+[21.491322] (-) TimerEvent: {}
+[21.592342] (-) TimerEvent: {}
+[21.693324] (-) TimerEvent: {}
+[21.794279] (-) TimerEvent: {}
+[21.895235] (-) TimerEvent: {}
+[21.996243] (-) TimerEvent: {}
+[22.097247] (-) TimerEvent: {}
+[22.198395] (-) TimerEvent: {}
+[22.299324] (-) TimerEvent: {}
+[22.400188] (-) TimerEvent: {}
+[22.501072] (-) TimerEvent: {}
+[22.601949] (-) TimerEvent: {}
+[22.702808] (-) TimerEvent: {}
+[22.803693] (-) TimerEvent: {}
+[22.904603] (-) TimerEvent: {}
+[23.005467] (-) TimerEvent: {}
+[23.106332] (-) TimerEvent: {}
+[23.207342] (-) TimerEvent: {}
+[23.308202] (-) TimerEvent: {}
+[23.409072] (-) TimerEvent: {}
+[23.509950] (-) TimerEvent: {}
+[23.610887] (-) TimerEvent: {}
+[23.711804] (-) TimerEvent: {}
+[23.812697] (-) TimerEvent: {}
+[23.913691] (-) TimerEvent: {}
+[24.014571] (-) TimerEvent: {}
+[24.115372] (-) TimerEvent: {}
+[24.216189] (-) TimerEvent: {}
+[24.317095] (-) TimerEvent: {}
+[24.418133] (-) TimerEvent: {}
+[24.519016] (-) TimerEvent: {}
+[24.555296] (cpp_pkg) StdoutLine: {'line': b'[100%] Built target driver_node\n'}
+[24.619368] (-) TimerEvent: {}
+[24.624908] (cpp_pkg) CommandEnded: {'returncode': 0}
+[24.628315] (cpp_pkg) JobProgress: {'identifier': 'cpp_pkg', 'progress': 'install'}
+[24.676101] (cpp_pkg) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/sunrise/work/Robot-Driven/build/cpp_pkg'], 'cwd': '/home/sunrise/work/Robot-Driven/build/cpp_pkg', 'env': OrderedDict([('PYTHON_BASIC_REPL', '1'), ('LANGUAGE', 'en_US.UTF-8'), ('USER', 'sunrise'), ('SSH_CLIENT', '172.16.10.180 51029 22'), ('XDG_SESSION_TYPE', 'tty'), ('GIT_ASKPASS', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/tros/humble/lib/aarch64-linux-gnu:/opt/tros/humble/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib:/usr/hobot/lib:/app/lib:/app/pub/lib:/middleware/lib:/middleware/pub/lib:/usr/hobot/lib/sensor:/system/lib:/system/usr/lib:/lib:'), ('BROWSER', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/helpers/browser.sh'), ('MOTD_SHOWN', 'pam'), ('HOME', '/home/sunrise'), ('TERM_PROGRAM_VERSION', '1.108.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-576116f7-b60f-4644-ba4e-03207e7866cd.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/node'), ('SSL_CERT_FILE', '/usr/lib/ssl/certs/ca-certificates.crt'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/sunrise/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TROS_DISTRO', 'humble'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'sunrise'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('TERM', 'xterm-256color'), ('XDG_SESSION_ID', '2'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/tros/humble/bin:/opt/ros/humble/bin:/home/sunrise/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/sunrise/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/sunrise/.vscode-server/cli/servers/Stable-94e8ae2b28cb5cc932b86e1070569c4463565c37/server/bin/remote-cli:/usr/hobot/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/sunrise/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('SSL_CERT_DIR', '/usr/lib/ssl/certs'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/sunrise/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-arm64/.noConfigDebugAdapterEndpoints/endpoint-65c99da6c1ae1e55.txt'), ('LANG', 'en_US.UTF-8'), ('PYTHONSTARTUP', '/home/sunrise/.vscode-server/data/User/workspaceStorage/bcd90a8c86a59260238900bd8f37a988/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-f57eae96bf.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/tros/humble:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/sunrise/work/Robot-Driven/build/cpp_pkg'), ('SSH_CONNECTION', '172.16.10.180 51029 172.16.10.95 22'), ('PYTHONPATH', '/opt/tros/humble/lib/python3.10/site-packages:/opt/tros/humble/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/tros/humble:/opt/ros/humble')]), 'shell': False}
+[24.719574] (-) TimerEvent: {}
+[24.732676] (cpp_pkg) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[24.744147] (cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/lib/cpp_pkg/driver_node\n'}
+[24.795363] (cpp_pkg) StdoutLine: {'line': b'-- Set runtime path of "/home/sunrise/work/Robot-Driven/install/cpp_pkg/lib/cpp_pkg/driver_node" to "/usr/local/lib"\n'}
+[24.796320] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/launch\n'}
+[24.797102] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/launch/__pycache__\n'}
+[24.797754] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/launch/__pycache__/turn_on_robot.launch.cpython-310.pyc\n'}
+[24.798339] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/launch/turn_on_robot.launch.py\n'}
+[24.798836] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/ament_index/resource_index/package_run_dependencies/cpp_pkg\n'}
+[24.799353] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/ament_index/resource_index/parent_prefix_path/cpp_pkg\n'}
+[24.799980] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.sh\n'}
+[24.800494] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.dsv\n'}
+[24.800938] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/environment/path.sh\n'}
+[24.801404] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/environment/path.dsv\n'}
+[24.801919] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/local_setup.bash\n'}
+[24.802355] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/local_setup.sh\n'}
+[24.802785] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/local_setup.zsh\n'}
+[24.803220] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/local_setup.dsv\n'}
+[24.803648] (cpp_pkg) StdoutLine: {'line': b'-- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/package.dsv\n'}
+[24.804076] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/ament_index/resource_index/packages/cpp_pkg\n'}
+[24.804507] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig.cmake\n'}
+[24.804986] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig-version.cmake\n'}
+[24.806352] (cpp_pkg) StdoutLine: {'line': b'-- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/package.xml\n'}
+[24.808783] (cpp_pkg) CommandEnded: {'returncode': 0}
+[24.819724] (-) TimerEvent: {}
+[24.920771] (-) TimerEvent: {}
+[24.922823] (cpp_pkg) JobEnded: {'identifier': 'cpp_pkg', 'rc': 0}
+[24.926098] (-) EventReactorShutdown: {}

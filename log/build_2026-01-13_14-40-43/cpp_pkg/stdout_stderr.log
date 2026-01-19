@@ -1,0 +1,8 @@
+[ 80%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/main.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/IDeviceThread.cpp.o[0m
+[ 80%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/SerialPortImpl.cpp.o[0m
+[01m[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/SerialPortImpl.cpp:[m[K In member function ‘[01m[Kvoid SerialPortImpl::parse_frame(std::string&)[m[K’:
+[01m[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/SerialPortImpl.cpp:295:30:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} and ‘[01m[Kint[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  295 |         for (size_t i = 2; [01;35m[Ki < 2 + len[m[K; ++i)
+      |                            [01;35m[K~~^~~~~~~~~[m[K
