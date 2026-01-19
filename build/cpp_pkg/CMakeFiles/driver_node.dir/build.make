@@ -111,10 +111,24 @@ CMakeFiles/driver_node.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/driver_node.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sunrise/work/Robot-Driven/src/cpp_pkg/src/main.cpp -o CMakeFiles/driver_node.dir/src/main.cpp.s
 
+CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.o: CMakeFiles/driver_node.dir/flags.make
+CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.o: /home/sunrise/work/Robot-Driven/src/cpp_pkg/src/parse_imu_data.cpp
+CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.o: CMakeFiles/driver_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sunrise/work/Robot-Driven/build/cpp_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.o -MF CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.o.d -o CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.o -c /home/sunrise/work/Robot-Driven/src/cpp_pkg/src/parse_imu_data.cpp
+
+CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/sunrise/work/Robot-Driven/src/cpp_pkg/src/parse_imu_data.cpp > CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.i
+
+CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/sunrise/work/Robot-Driven/src/cpp_pkg/src/parse_imu_data.cpp -o CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.s
+
 CMakeFiles/driver_node.dir/src/publisher.cpp.o: CMakeFiles/driver_node.dir/flags.make
 CMakeFiles/driver_node.dir/src/publisher.cpp.o: /home/sunrise/work/Robot-Driven/src/cpp_pkg/src/publisher.cpp
 CMakeFiles/driver_node.dir/src/publisher.cpp.o: CMakeFiles/driver_node.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sunrise/work/Robot-Driven/build/cpp_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/driver_node.dir/src/publisher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sunrise/work/Robot-Driven/build/cpp_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/driver_node.dir/src/publisher.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/driver_node.dir/src/publisher.cpp.o -MF CMakeFiles/driver_node.dir/src/publisher.cpp.o.d -o CMakeFiles/driver_node.dir/src/publisher.cpp.o -c /home/sunrise/work/Robot-Driven/src/cpp_pkg/src/publisher.cpp
 
 CMakeFiles/driver_node.dir/src/publisher.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/driver_node.dir/src/publisher.cpp.s: cmake_force
 CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o: CMakeFiles/driver_node.dir/flags.make
 CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o: /home/sunrise/work/Robot-Driven/src/cpp_pkg/src/turn_on_robot.cpp
 CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o: CMakeFiles/driver_node.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sunrise/work/Robot-Driven/build/cpp_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/sunrise/work/Robot-Driven/build/cpp_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o -MF CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o.d -o CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o -c /home/sunrise/work/Robot-Driven/src/cpp_pkg/src/turn_on_robot.cpp
 
 CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.i: cmake_force
@@ -144,6 +158,7 @@ driver_node_OBJECTS = \
 "CMakeFiles/driver_node.dir/src/IDeviceThread.cpp.o" \
 "CMakeFiles/driver_node.dir/src/SerialPortImpl.cpp.o" \
 "CMakeFiles/driver_node.dir/src/main.cpp.o" \
+"CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.o" \
 "CMakeFiles/driver_node.dir/src/publisher.cpp.o" \
 "CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o"
 
@@ -153,6 +168,7 @@ driver_node_EXTERNAL_OBJECTS =
 driver_node: CMakeFiles/driver_node.dir/src/IDeviceThread.cpp.o
 driver_node: CMakeFiles/driver_node.dir/src/SerialPortImpl.cpp.o
 driver_node: CMakeFiles/driver_node.dir/src/main.cpp.o
+driver_node: CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.o
 driver_node: CMakeFiles/driver_node.dir/src/publisher.cpp.o
 driver_node: CMakeFiles/driver_node.dir/src/turn_on_robot.cpp.o
 driver_node: CMakeFiles/driver_node.dir/build.make
@@ -227,7 +243,7 @@ driver_node: /opt/ros/humble/lib/librosidl_runtime_c.so
 driver_node: /opt/ros/humble/lib/librcutils.so
 driver_node: /usr/lib/aarch64-linux-gnu/libpython3.10.so
 driver_node: CMakeFiles/driver_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sunrise/work/Robot-Driven/build/cpp_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable driver_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/sunrise/work/Robot-Driven/build/cpp_pkg/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable driver_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/driver_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

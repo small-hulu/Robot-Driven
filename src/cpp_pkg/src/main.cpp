@@ -1,6 +1,7 @@
 #include "cpp_pkg/turn_on_robot.h"
 #include "cpp_pkg/SerialPortImpl.h"
 #include "cpp_pkg/publisher.h"
+#include "cpp_pkg/parse_data_factory.h"
 #include <iostream>
 #include <vector>
 #include <cstdint>
@@ -46,6 +47,11 @@ std::vector<uint8_t> pack_frame(uint8_t cmd,const std::vector<uint8_t>& data)
 int main(int argc, char *argv[])
 {
     rclcpp::init(argc,argv);
+
+    // 注册IMU数据处理器
+    auto& factory = ParseDataFactory::instance();
+    factory.register_processor<ParseImuData>();
+    RCLCPP_INFO(rclcpp::get_logger("main"), "IMU processor registered successfully.");
     
     auto& serial = SerialPortImpl::instance();
 
@@ -55,19 +61,11 @@ int main(int argc, char *argv[])
 
     serial.Set_info(info);
     
-    auto IMU_node = std::make_shared<Publisher>();
+    auto publish_node_ = std::make_shared<Publisher>();
 
     serial.set_recv_callback(
-        [&IMU_node](const std::string& frame) {
-            ImuData imu_data = IMU_node->parse_imu_data(frame);
-            if (!imu_data.is_valid) {
-                return;
-            }
-            imu_data.print();
-            if(imu_data.az > 1050){
-                RCLCPP_WARN(rclcpp::get_logger("imu_data"),"az > 1050! ********************** az = %d", imu_data.az);
-                IMU_node->publish_data("up");
-            }
+        [&publish_node_](const std::string& frame) {
+            ParseDataFactory::instance().dispatch_process(frame, publish_node_);
         }
     );
     
@@ -78,7 +76,7 @@ int main(int argc, char *argv[])
     robot_node->start();
     
     rclcpp::spin(robot_node);
-    rclcpp::spin(IMU_node);
+    rclcpp::spin(publish_node_);
     rclcpp::shutdown();
     return 0;
 }

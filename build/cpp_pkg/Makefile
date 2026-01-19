@@ -282,6 +282,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/driver_node.dir/build.make CMakeFiles/driver_node.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/parse_imu_data.o: src/parse_imu_data.cpp.o
+.PHONY : src/parse_imu_data.o
+
+# target to build an object file
+src/parse_imu_data.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/driver_node.dir/build.make CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.o
+.PHONY : src/parse_imu_data.cpp.o
+
+src/parse_imu_data.i: src/parse_imu_data.cpp.i
+.PHONY : src/parse_imu_data.i
+
+# target to preprocess a source file
+src/parse_imu_data.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/driver_node.dir/build.make CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.i
+.PHONY : src/parse_imu_data.cpp.i
+
+src/parse_imu_data.s: src/parse_imu_data.cpp.s
+.PHONY : src/parse_imu_data.s
+
+# target to generate assembly for a file
+src/parse_imu_data.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/driver_node.dir/build.make CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.s
+.PHONY : src/parse_imu_data.cpp.s
+
 src/publisher.o: src/publisher.cpp.o
 .PHONY : src/publisher.o
 
@@ -355,6 +379,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/parse_imu_data.o"
+	@echo "... src/parse_imu_data.i"
+	@echo "... src/parse_imu_data.s"
 	@echo "... src/publisher.o"
 	@echo "... src/publisher.i"
 	@echo "... src/publisher.s"

@@ -1,6 +1,0 @@
-[01m[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/publisher.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Kpublisher.h: No such file or directory
-    1 | #include [01;31m[K"publisher.h"[m[K
-      |          [01;31m[K^~~~~~~~~~~~~[m[K
-compilation terminated.
-gmake[2]: *** [CMakeFiles/driver_node.dir/build.make:118: CMakeFiles/driver_node.dir/src/publisher.cpp.o] Error 1
-gmake[2]: *** Waiting for unfinished jobs....

@@ -1,0 +1,42 @@
+[0.051s] Invoking command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --build /home/sunrise/work/Robot-Driven/build/cpp_pkg -- -j8 -l8
+[0.270s] [35m[1mConsolidate compiler generated dependencies of target driver_node[0m
+[0.442s] [ 14%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/main.cpp.o[0m
+[0.443s] [ 28%] [32mBuilding CXX object CMakeFiles/driver_node.dir/src/parse_imu_data.cpp.o[0m
+[14.884s] [01m[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/parse_imu_data.cpp:[m[K In member function ‘[01m[Kvirtual DataResult ParseImuData::parse_frame(const string&)[m[K’:
+[14.884s] [01m[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/parse_imu_data.cpp:12:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kstd::__cxx11::basic_string<char>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+[14.885s]    12 |         [01;35m[K(3 + length) > frame.size()[m[K) {
+[14.885s]       |         [01;35m[K~~~~~~~~~~~~~^~~~~~~~~~~~~~[m[K
+[14.887s] [01m[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/parse_imu_data.cpp:[m[K In member function ‘[01m[Kvirtual void ParseImuData::process_data(const DataResult&, std::shared_ptr<Publisher>)[m[K’:
+[14.888s] [01m[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/parse_imu_data.cpp:52:24:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kimu[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[14.888s]    52 |         const ImuData& [01;35m[Kimu[m[K = result.data.imu;
+[14.889s]       |                        [01;35m[K^~~[m[K
+[18.881s] [01m[K/home/sunrise/work/Robot-Driven/src/cpp_pkg/src/main.cpp:11:20:[m[K [01;35m[Kwarning: [m[K‘[01m[Kstd::string bytes_to_hex(const string&)[m[K’ defined but not used [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-function-Wunused-function]8;;[m[K]
+[18.882s]    11 | static std::string [01;35m[Kbytes_to_hex[m[K(const std::string& data)
+[18.882s]       |                    [01;35m[K^~~~~~~~~~~~[m[K
+[21.123s] [ 42%] [32m[1mLinking CXX executable driver_node[0m
+[22.544s] [100%] Built target driver_node
+[22.620s] Invoked command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --build /home/sunrise/work/Robot-Driven/build/cpp_pkg -- -j8 -l8
+[22.688s] Invoking command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --install /home/sunrise/work/Robot-Driven/build/cpp_pkg
+[22.723s] -- Install configuration: "Release"
+[22.724s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/lib/cpp_pkg/driver_node
+[22.734s] -- Set runtime path of "/home/sunrise/work/Robot-Driven/install/cpp_pkg/lib/cpp_pkg/driver_node" to "/usr/local/lib"
+[22.735s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/launch
+[22.736s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/launch/__pycache__
+[22.736s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/launch/__pycache__/turn_on_robot.launch.cpython-310.pyc
+[22.737s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/launch/turn_on_robot.launch.py
+[22.738s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/ament_index/resource_index/package_run_dependencies/cpp_pkg
+[22.738s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/ament_index/resource_index/parent_prefix_path/cpp_pkg
+[22.739s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.sh
+[22.739s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/environment/ament_prefix_path.dsv
+[22.740s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/environment/path.sh
+[22.740s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/environment/path.dsv
+[22.740s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/local_setup.bash
+[22.741s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/local_setup.sh
+[22.741s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/local_setup.zsh
+[22.742s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/local_setup.dsv
+[22.742s] -- Installing: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/package.dsv
+[22.744s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/ament_index/resource_index/packages/cpp_pkg
+[22.745s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig.cmake
+[22.749s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/cmake/cpp_pkgConfig-version.cmake
+[22.752s] -- Up-to-date: /home/sunrise/work/Robot-Driven/install/cpp_pkg/share/cpp_pkg/package.xml
+[22.754s] Invoked command in '/home/sunrise/work/Robot-Driven/build/cpp_pkg' returned '0': CMAKE_PREFIX_PATH=/opt/tros/humble:/opt/ros/humble /usr/bin/cmake --install /home/sunrise/work/Robot-Driven/build/cpp_pkg
