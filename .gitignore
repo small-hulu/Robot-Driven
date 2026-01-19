@@ -1,0 +1,29 @@
+# 1. 编译产物（C++/colcon build生成的文件，核心忽略项）
+build/
+install/
+log/
+bin/
+obj/
+*.o      
+*.a       
+*.so      
+*.out    
+
+# 2. 临时文件与缓存文件
+*.tmp
+*.temp
+*.swp     
+*.swo
+.DS_Store 
+*.log     
+
+# 3. IDE/编辑器配置文件（个人开发环境，无需共享）
+.vs/
+.vscode/  
+.idea/   
+*.suo
+*.sln.cache
+
+# 4. 其他无需提交的文件
+.env     
+*.bak    
