@@ -50,32 +50,20 @@ public:
         return it->second(); //调用函数创建处理器实例
     }
 
-    DataResult parse_frame_dispatch(const std::string& frame) //分发解析数据帧
-    {
-        uint8_t data_flag = static_cast<uint8_t>(frame[2]);
-
-        ParseData::Ptr processor = create_processor(data_flag); //创建对应处理器
-        if (!processor) {
-            DataResult invalid_result;
-            return invalid_result;
-        }
-
-        return processor->parse_frame(frame); //调用处理器解析数据帧
-    }
-
     void dispatch_process(const std::string& frame, std::shared_ptr<Publisher> pub_node = nullptr) //分发处理数据
     {
-        DataResult result = parse_frame_dispatch(frame);
-        if (!result.is_valid) {
-            return;
-        }
-
         uint8_t data_flag = static_cast<uint8_t>(frame[2]);
         ParseData::Ptr processor = create_processor(data_flag);
         if (!processor) {
+        return;
+        }
+        
+        DataResult result = processor->parse_frame(frame); //解析数据帧
+        if(!result.is_valid){
             return;
         }
-        processor->process_data(result, pub_node);
+
+        processor->process_data(result, pub_node); 
     }
 
 private:
