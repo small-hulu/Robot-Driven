@@ -7,10 +7,6 @@ Publisher::Publisher()
     publisher_ = this->create_publisher<std_msgs::msg::String>("hug", 10);
 }
 
-Publisher::~Publisher()
-{
-}
-
 // 发布数据
 void Publisher::publish_data(const std::string& data)
 {
