@@ -1,7 +1,7 @@
 #include "cpp_pkg/parse_imu_data.h"
 #include <rclcpp/rclcpp.hpp>
 
-DataResult ParseImuData::parse_frame(const std::string& frame)
+DataResult ParseImuData::decode_frame(const std::string& frame)
 {
     DataResult result;
     ImuData imu;

@@ -46,7 +46,7 @@ public:
     using Ptr = std::shared_ptr<ParseData>;
     virtual ~ParseData() = default;
 
-    virtual DataResult parse_frame(const std::string& frame) = 0; //解析数据帧
+    virtual DataResult decode_frame(const std::string& frame) = 0; //解析数据帧
 
     virtual void process_data(const DataResult& result, std::shared_ptr<Publisher> pub_node = nullptr) = 0; //处理数据
 

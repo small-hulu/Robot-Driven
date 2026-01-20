@@ -1,9 +1,9 @@
 #include "cpp_pkg/publisher.h"
 
 Publisher::Publisher()
-    : Node("IMU_data_publisher")
+    : Node("data_publisher")
 {
-    // 创建一个发布者，发布到话题 IMU_data_topic
+    // 创建一个发布者，发布到话题 hug
     publisher_ = this->create_publisher<std_msgs::msg::String>("hug", 10);
 }
 
