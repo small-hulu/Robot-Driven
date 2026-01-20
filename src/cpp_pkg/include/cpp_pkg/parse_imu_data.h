@@ -10,6 +10,7 @@ public:
     uint8_t get_data_flag() const override;
 
 private:
+    void print_imu_data(const DataResult& result);
     static const uint8_t IMU_DATA_FLAG = 0x11;
 };
 #endif // PARSE_IMU_DATA_H_

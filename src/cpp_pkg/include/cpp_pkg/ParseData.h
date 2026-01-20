@@ -1,26 +1,10 @@
 #ifndef PARSE_DATA_H_
 #define PARSE_DATA_H_
+#include "sensor_msgs/msg/imu.hpp"
 #include "publisher.h"
 #include <string>
 #include <iostream>
 #include <memory>
-
-struct ImuData                 
-{
-    int16_t ax;
-    int16_t ay;
-    int16_t az;
-    int16_t gx;
-    int16_t gy;
-    int16_t gz;
-    bool is_valid = false; 
-    void print() const
-    {
-        if (is_valid) {
-            std::cout << "IMU Data: ax=" << ax << ", ay=" << ay << ", az=" << az << ", gx=" << gx << ", gy=" << gy << ", gz=" << gz << std::endl;
-        }
-    }
-};
 
 enum class DataType // 数据类型
 {
@@ -32,11 +16,12 @@ struct DataResult
 {
     DataType data_type = DataType::NONE; // 标记当前存储的数据类型
     bool is_valid = false;     // 标记数据是否有效
-    union DataUnion
+
+    struct DataStruct
     {
-        ImuData imu;   // IMU数据
-        DataUnion() {}
-        ~DataUnion() {} 
+        sensor_msgs::msg::Imu imu;  //std::optional
+        DataStruct() {}
+        ~DataStruct() {} 
     } data;
 };
 

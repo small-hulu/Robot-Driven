@@ -11,6 +11,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 
 # 查找并配置 serial 库路径
 # 假设你使用的是默认的安装路径 /usr/local
@@ -42,6 +43,7 @@ ament_target_dependencies(
   rclcpp
   std_msgs
   geometry_msgs
+  sensor_msgs 
 )
 
 # 如果 serial 库安装在 /usr/local/lib 下
