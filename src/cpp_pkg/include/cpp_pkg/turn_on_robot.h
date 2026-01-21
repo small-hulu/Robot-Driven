@@ -18,6 +18,11 @@ public:
         Mode_Raise       = 0x04,  /// 举手
         Mode_RHead       = 0X05,  ///转动头部
 
+        Mode_Normal      = 0x06,  /// 平动
+        Mode_Down        = 0x07,  /// 放手
+        Mode_Breath      = 0x08,
+        Mode_ArmIdle1    = 0x09,
+
         Mode_Count  /// 此处有两个作用，1)枚举计数 2)非法标志
     };
     
@@ -62,4 +67,12 @@ private:
     RetCode execSet_Raise();
 
     RetCode execSet_RHead();
+
+    RetCode execSet_Normal();
+
+    RetCode execSet_Down();
+
+    RetCode execSet_Breath();
+
+    RetCode execSet_ArmIdle1();
 };

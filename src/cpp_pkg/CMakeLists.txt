@@ -13,14 +13,18 @@ find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 
-# 查找并配置 serial 库路径
-# 假设你使用的是默认的安装路径 /usr/local
-set(CMAKE_INSTALL_RPATH /usr/local/lib)
+# 设置 serial 库路径
+set(SERIAL_LIB_PATH "/home/sunrise/serial_ws/install/serial")
 
-# 在你的系统中可能没有 `serial` 包的 ROS 2 配置文件
-# 所以需要手动指定 serial 库的位置
-include_directories(/usr/local/include)
-link_directories(/usr/local/lib)
+# 添加 serial 库的头文件目录
+include_directories(${SERIAL_LIB_PATH}/include)
+
+# 设置库路径
+link_directories(${SERIAL_LIB_PATH}/lib)
+
+# 设置安装路径
+set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 # 使用 file(GLOB ...) 动态获取所有源文件
 file(GLOB SRC_FILES src/*.cpp)
@@ -37,16 +41,16 @@ target_include_directories(driver_node PUBLIC
 # 设置 C++ 标准
 target_compile_features(driver_node PUBLIC cxx_std_17)
 
-# 链接 ROS 2 依赖项和 serial 库
+# 链接 ROS 2 依赖项
 ament_target_dependencies(
   driver_node
   rclcpp
   std_msgs
   geometry_msgs
-  sensor_msgs 
+  sensor_msgs
 )
 
-# 如果 serial 库安装在 /usr/local/lib 下
+# 链接 serial 库
 target_link_libraries(driver_node serial)
 
 # 安装目标

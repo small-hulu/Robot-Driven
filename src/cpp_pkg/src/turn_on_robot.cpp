@@ -14,6 +14,11 @@ turn_on_robot::turn_on_robot()
     setFun.push_back(std::bind(&turn_on_robot::execSet_Raise, this));
     setFun.push_back(std::bind(&turn_on_robot::execSet_RHead, this));
 
+    setFun.push_back(std::bind(&turn_on_robot::execSet_Wave, this));
+    setFun.push_back(std::bind(&turn_on_robot::execSet_Down, this));
+    setFun.push_back(std::bind(&turn_on_robot::execSet_Breath, this));
+    setFun.push_back(std::bind(&turn_on_robot::execSet_ArmIdle1, this));
+
     assert(setFun.size() == Mode_Count);
     set_loopFun(setFun);
   }
@@ -67,16 +72,6 @@ RetCode turn_on_robot::execSet_Reach_Fwd()
     RCLCPP_INFO(this->get_logger(),"execSet_Reach_Fwd");   
     SerialFrame frame(Mode_Reach_Fwd);
 
-    // int16_t vx = static_cast<int16_t>(m_param.x_linear);
-    // int16_t vz = static_cast<int16_t>(m_param.z_angular);
-
-    // frame.set_data({
-    //     static_cast<uint8_t>((vx >> 8) & 0xFF),
-    //     static_cast<uint8_t>( vx       & 0xFF),
-    //     static_cast<uint8_t>((vz >> 8) & 0xFF),
-    //     static_cast<uint8_t>( vz       & 0xFF),
-    // });
-
     auto bytes = frame.to_bytes();
     SerialPortImpl::instance().write_bytes(bytes.data(), bytes.size());
     return RetCode::Success;
@@ -86,16 +81,6 @@ RetCode turn_on_robot::execSet_Wave()
 {
   RCLCPP_INFO(this->get_logger(),"execSet_Wave");   
   SerialFrame frame(Mode_Wave);
-
-    // int16_t vx = static_cast<int16_t>(m_param.x_linear);
-    // int16_t vz = static_cast<int16_t>(m_param.z_angular);
-
-    // frame.set_data({
-    //   static_cast<uint8_t>((vx >> 8) & 0xFF),
-    //   static_cast<uint8_t>( vx       & 0xFF),
-    //   static_cast<uint8_t>((vz >> 8) & 0xFF),
-    //   static_cast<uint8_t>( vz       & 0xFF),
-    // });
 
     auto bytes = frame.to_bytes();
     SerialPortImpl::instance().write_bytes(bytes.data(), bytes.size());
@@ -107,6 +92,36 @@ RetCode turn_on_robot::execSet_Raise()
   RCLCPP_INFO(this->get_logger(),"execSet_Raise");  
   SerialFrame frame(Mode_Raise);
 
+  auto bytes = frame.to_bytes();
+  SerialPortImpl::instance().write_bytes(bytes.data(), bytes.size()); 
+  return RetCode::Success;
+}
+
+RetCode turn_on_robot::execSet_RHead()
+{
+  RCLCPP_INFO(this->get_logger(),"execSet_RHead");  
+  SerialFrame frame(Mode_RHead);
+
+  int16_t angular_z = static_cast<int16_t>(m_param.z_angular); //水平角
+  int16_t angular_y = static_cast<int16_t>(m_param.y_angular); //俯仰角
+    
+
+  frame.set_data({
+        static_cast<uint8_t>((angular_z >> 8) & 0xFF),
+        static_cast<uint8_t>( angular_z       & 0xFF),
+        static_cast<uint8_t>((angular_y >> 8) & 0xFF),
+        static_cast<uint8_t>( angular_y       & 0xFF),
+  });
+
+  auto bytes = frame.to_bytes();
+  SerialPortImpl::instance().write_bytes(bytes.data(), bytes.size()); 
+  return RetCode::Success;
+}
+RetCode turn_on_robot::execSet_Normal()
+{
+  RCLCPP_INFO(this->get_logger(),"execSet_Normal");  
+  SerialFrame frame(Mode_Normal);
+
     // int16_t vx = static_cast<int16_t>(m_param.x_linear);
     // int16_t vz = static_cast<int16_t>(m_param.z_angular);
 
@@ -122,25 +137,64 @@ RetCode turn_on_robot::execSet_Raise()
   return RetCode::Success;
 }
 
-RetCode turn_on_robot::execSet_RHead()
+RetCode turn_on_robot::execSet_Down()
 {
-  RCLCPP_INFO(this->get_logger(),"execSet_RHead");  
-  SerialFrame frame(Mode_RHead);
+  RCLCPP_INFO(this->get_logger(),"execSet_Down");  
+  SerialFrame frame(Mode_Down);
 
-    int16_t angular_z = static_cast<int16_t>(m_param.z_angular); //水平角
-    int16_t angular_y = static_cast<int16_t>(m_param.y_angular); //俯仰角
-    
+    // int16_t vx = static_cast<int16_t>(m_param.x_linear);
+    // int16_t vz = static_cast<int16_t>(m_param.z_angular);
 
-    frame.set_data({
-        static_cast<uint8_t>((angular_z >> 8) & 0xFF),
-        static_cast<uint8_t>( angular_z       & 0xFF),
-        static_cast<uint8_t>((angular_y >> 8) & 0xFF),
-        static_cast<uint8_t>( angular_y       & 0xFF),
-    });
+    // frame.set_data({
+    //     static_cast<uint8_t>((vx >> 8) & 0xFF),
+    //     static_cast<uint8_t>( vx       & 0xFF),
+    //     static_cast<uint8_t>((vz >> 8) & 0xFF),
+    //     static_cast<uint8_t>( vz       & 0xFF),
+    // });
 
     auto bytes = frame.to_bytes();
     SerialPortImpl::instance().write_bytes(bytes.data(), bytes.size()); 
-    return RetCode::Success;
+  return RetCode::Success;
+}
+
+RetCode turn_on_robot::execSet_Breath()
+{
+  RCLCPP_INFO(this->get_logger(),"execSet_Breath");  
+  SerialFrame frame(Mode_Breath);
+
+    // int16_t vx = static_cast<int16_t>(m_param.x_linear);
+    // int16_t vz = static_cast<int16_t>(m_param.z_angular);
+
+    // frame.set_data({
+    //     static_cast<uint8_t>((vx >> 8) & 0xFF),
+    //     static_cast<uint8_t>( vx       & 0xFF),
+    //     static_cast<uint8_t>((vz >> 8) & 0xFF),
+    //     static_cast<uint8_t>( vz       & 0xFF),
+    // });
+
+    auto bytes = frame.to_bytes();
+    SerialPortImpl::instance().write_bytes(bytes.data(), bytes.size()); 
+  return RetCode::Success;
+}
+
+RetCode turn_on_robot::execSet_ArmIdle1()
+{
+  RCLCPP_INFO(this->get_logger(),"execSet_ArmIdle1");  
+  SerialFrame frame(Mode_ArmIdle1);
+
+    // int16_t vx = static_cast<int16_t>(m_param.x_linear);
+    // int16_t vz = static_cast<int16_t>(m_param.z_angular);
+
+    // frame.set_data({
+    //     static_cast<uint8_t>((vx >> 8) & 0xFF),
+    //     static_cast<uint8_t>( vx       & 0xFF),
+    //     static_cast<uint8_t>((vz >> 8) & 0xFF),
+    //     static_cast<uint8_t>( vz       & 0xFF),
+    // });
+
+    auto bytes = frame.to_bytes();
+    SerialPortImpl::instance().write_bytes(bytes.data(), bytes.size()); 
+  return RetCode::Success;
 }
 /**************************************
 Function: The speed topic subscription Callback function, according to the subscribed instructions through the serial port command control of the lower computer
