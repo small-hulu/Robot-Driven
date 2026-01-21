@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
     serial.Set_info(info);
     
 
-    auto publish_node = std::make_shared<Publisher>();
+    auto publish_node = std::make_shared<PublisherNode>();
 
     // 设置串口数据处理回调函数
     serial.set_recv_callback(

@@ -1,29 +1,11 @@
 #ifndef PARSE_DATA_H_
 #define PARSE_DATA_H_
 #include "sensor_msgs/msg/imu.hpp"
+#include "data_result.h"
 #include "publisher.h"
 #include <string>
 #include <iostream>
 #include <memory>
-
-enum class DataType // 数据类型
-{
-    NONE,       // 无数据
-    IMU_DATA,   // IMU数据
-};
-
-struct DataResult
-{
-    DataType data_type = DataType::NONE; // 标记当前存储的数据类型
-    bool is_valid = false;     // 标记数据是否有效
-
-    struct DataStruct
-    {
-        sensor_msgs::msg::Imu imu;  //std::optional
-        DataStruct() {}
-        ~DataStruct() {} 
-    } data;
-};
 
 class ParseData
 {
@@ -33,7 +15,7 @@ public:
 
     virtual DataResult decode_frame(const std::string& frame) = 0; //解析数据帧
 
-    virtual void process_data(const DataResult& result, std::shared_ptr<Publisher> pub_node = nullptr) = 0; //处理数据
+    virtual void process_data(const DataResult& result, std::shared_ptr<PublisherNode> pub_node = nullptr) = 0; //处理数据
 
     virtual uint8_t get_data_flag() const = 0; //获取数据标识
 };

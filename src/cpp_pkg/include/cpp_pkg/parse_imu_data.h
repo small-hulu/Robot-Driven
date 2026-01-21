@@ -8,7 +8,7 @@ class ParseImuData : public ParseData
 {
 public:
     DataResult decode_frame(const std::string& frame) override;
-    void process_data(const DataResult& result, std::shared_ptr<Publisher> pub_node = nullptr) override;
+    void process_data(const DataResult& result, std::shared_ptr<PublisherNode> pub_node = nullptr) override;
     uint8_t get_data_flag() const override;
 
 private:

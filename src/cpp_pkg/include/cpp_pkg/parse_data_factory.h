@@ -50,7 +50,7 @@ public:
         return it->second(); //调用函数创建处理器实例
     }
 
-    void dispatch_process(const std::string& frame, std::shared_ptr<Publisher> pub_node = nullptr) //分发处理数据
+    void dispatch_process(const std::string& frame, std::shared_ptr<PublisherNode> pub_node = nullptr) //分发处理数据
     {
         uint8_t data_flag = static_cast<uint8_t>(frame[2]);
         ParseData::Ptr processor = create_processor(data_flag);

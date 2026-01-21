@@ -47,19 +47,15 @@ DataResult ParseImuData::decode_frame(const std::string& frame)
     return result;
 }
 
-void ParseImuData::process_data(const DataResult& result, std::shared_ptr<Publisher> pub_node)
+void ParseImuData::process_data(const DataResult& result, std::shared_ptr<PublisherNode> pub_node)
 {
     if (!result.is_valid || result.data_type != DataType::IMU_DATA) {
         return;
     }
 
-    sensor_msgs::msg::Imu imu_data = result.data.imu; //获取imu数据
     print_imu_data(result);
-    if(imu_data.linear_acceleration.z > 1050){
-        RCLCPP_WARN(rclcpp::get_logger("ParseImuData"),"az > 1050! ********************** az = %f", imu_data.linear_acceleration.z);
-        if(pub_node){
-            pub_node->publish_data("up");
-        }
+    if (pub_node) {
+        pub_node->publish_imu_data(result); // 发布IMU数据
     }
 }
 
