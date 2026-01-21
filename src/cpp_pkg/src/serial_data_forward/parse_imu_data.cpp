@@ -1,4 +1,4 @@
-#include "cpp_pkg/parse_imu_data.h"
+#include "serial_data_forward/parse_imu_data.h"
 #include <rclcpp/rclcpp.hpp>
 
 DataResult ParseImuData::decode_frame(const std::string& frame)

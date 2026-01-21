@@ -1,4 +1,4 @@
-#include "cpp_pkg/publisher.h"
+#include "serial_data_forward/publisher.h"
 
 PublisherNode::PublisherNode()
     : Node("data_publisher")

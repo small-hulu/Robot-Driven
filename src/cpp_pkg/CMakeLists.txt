@@ -14,7 +14,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 
 # 设置 serial 库路径
-set(SERIAL_LIB_PATH "/home/sunrise/serial_ws/install/serial")
+set(SERIAL_LIB_PATH "/usr/local")
 
 # 添加 serial 库的头文件目录
 include_directories(${SERIAL_LIB_PATH}/include)
@@ -27,7 +27,7 @@ set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 # 使用 file(GLOB ...) 动态获取所有源文件
-file(GLOB SRC_FILES src/*.cpp)
+file(GLOB SRC_FILES src/*.cpp src/serial_data_forward/*.cpp)
 
 # 添加可执行文件
 add_executable(driver_node ${SRC_FILES})
