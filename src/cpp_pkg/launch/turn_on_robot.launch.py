@@ -15,7 +15,7 @@ def generate_launch_description():
         Node(
             package='cpp_pkg',
             executable='driver_node', 
-            name='IMU_data_publisher',
+            name='data_publisher',
             output='screen',
             parameters=[],
         )

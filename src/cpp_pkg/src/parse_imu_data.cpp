@@ -1,10 +1,10 @@
 #include "cpp_pkg/parse_imu_data.h"
 #include <rclcpp/rclcpp.hpp>
 
-DataResult ParseImuData::parse_frame(const std::string& frame)
+DataResult ParseImuData::decode_frame(const std::string& frame)
 {
     DataResult result;
-    ImuData imu;
+    sensor_msgs::msg::Imu imu;
 
     size_t length = static_cast<uint8_t>(frame[1]) - 1;
 
@@ -19,26 +19,25 @@ DataResult ParseImuData::parse_frame(const std::string& frame)
         return result;
     }
 
-    imu.ax = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[0])) << 8) 
+    imu.linear_acceleration.x = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[0])) << 8) 
            | static_cast<uint8_t>(imu_data[1]);
 
-    imu.ay = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[2])) << 8) 
+    imu.linear_acceleration.y = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[2])) << 8) 
            | static_cast<uint8_t>(imu_data[3]);
 
-    imu.az = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[4])) << 8) 
+    imu.linear_acceleration.z = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[4])) << 8) 
            | static_cast<uint8_t>(imu_data[5]);
 
-    imu.gx = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[6])) << 8) 
+    imu.angular_velocity.x = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[6])) << 8) 
            | static_cast<uint8_t>(imu_data[7]);
 
-    imu.gy = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[8])) << 8) 
+    imu.angular_velocity.y = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[8])) << 8) 
            | static_cast<uint8_t>(imu_data[9]);
 
-    imu.gz = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[10])) << 8) 
+    imu.angular_velocity.z = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[10])) << 8) 
            | static_cast<uint8_t>(imu_data[11]);
 
     // 标记数据有效
-    imu.is_valid = true;
     result.is_valid = true;
     result.data.imu = imu;
     result.data_type = DataType::IMU_DATA;
@@ -48,14 +47,14 @@ DataResult ParseImuData::parse_frame(const std::string& frame)
 
 void ParseImuData::process_data(const DataResult& result, std::shared_ptr<Publisher> pub_node)
 {
-    if (!result.is_valid || result.data_type != DataType::IMU_DATA || !result.data.imu.is_valid) {
+    if (!result.is_valid || result.data_type != DataType::IMU_DATA) {
         return;
     }
 
-    const ImuData& imu_data = result.data.imu; //获取imu数据
-    imu_data.print();
-    if(imu_data.az > 1050){
-        RCLCPP_WARN(rclcpp::get_logger("ParseImuData"),"az > 1050! ********************** az = %d", imu_data.az);
+    sensor_msgs::msg::Imu imu_data = result.data.imu; //获取imu数据
+    print_imu_data(result);
+    if(imu_data.linear_acceleration.z > 1050){
+        RCLCPP_WARN(rclcpp::get_logger("ParseImuData"),"az > 1050! ********************** az = %f", imu_data.linear_acceleration.z);
         if(pub_node){
             pub_node->publish_data("up");
         }
@@ -65,4 +64,18 @@ void ParseImuData::process_data(const DataResult& result, std::shared_ptr<Publis
 uint8_t ParseImuData::get_data_flag() const
 {
     return IMU_DATA_FLAG;
+}
+
+void ParseImuData::print_imu_data(const DataResult& result) 
+{
+    if (result.is_valid && result.data_type == DataType::IMU_DATA) {
+        std::cout << "IMU Data: ax=" << result.data.imu.linear_acceleration.x 
+                    << ", ay=" << result.data.imu.linear_acceleration.y 
+                    << ", az=" << result.data.imu.linear_acceleration.z 
+                    << ", gx=" << result.data.imu.angular_velocity.x 
+                    << ", gy=" << result.data.imu.angular_velocity.y 
+                    << ", gz=" << result.data.imu.angular_velocity.z << std::endl;
+    } else {
+        std::cout << "IMU Data: invalid or wrong type" << std::endl;
+    }
 }

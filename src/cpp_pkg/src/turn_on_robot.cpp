@@ -18,7 +18,7 @@ turn_on_robot::turn_on_robot()
     set_loopFun(setFun);
   }
 
-  RCLCPP_INFO(this->get_logger(),"wheeltec_robot create\r\n");
+  RCLCPP_INFO(this->get_logger(),"wheeltec_robot create");
 
   //Set the velocity control command callback function
   Cmd_Vel_Sub = create_subscription<geometry_msgs::msg::Twist>(

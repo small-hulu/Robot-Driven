@@ -53,19 +53,20 @@ int main(int argc, char *argv[])
     factory.register_processor<ParseImuData>();
     RCLCPP_INFO(rclcpp::get_logger("main"), "IMU processor registered successfully.");
     
+    // 设置串口
     auto& serial = SerialPortImpl::instance();
-
     Info info;
     info.port = "/dev/ttyS1";
     info.baud_rate = 115200;
-
     serial.Set_info(info);
     
-    auto publish_node_ = std::make_shared<Publisher>();
 
+    auto publish_node = std::make_shared<Publisher>();
+
+    // 设置串口数据处理回调函数
     serial.set_recv_callback(
-        [&publish_node_](const std::string& frame) {
-            ParseDataFactory::instance().dispatch_process(frame, publish_node_);
+        [&publish_node](const std::string& frame) {
+            ParseDataFactory::instance().dispatch_process(frame, publish_node);
         }
     );
     
@@ -76,7 +77,7 @@ int main(int argc, char *argv[])
     robot_node->start();
     
     rclcpp::spin(robot_node);
-    rclcpp::spin(publish_node_);
+    rclcpp::spin(publish_node);
     rclcpp::shutdown();
     return 0;
 }

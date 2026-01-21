@@ -38,7 +38,7 @@ public:
         };
     }
 
-    ParseData::Ptr create_processor(uint8_t data_flag) //创建数据处理器实例
+    ParseData::Ptr create_processor(const uint8_t& data_flag) //创建数据处理器实例
     {
         std::lock_guard<std::mutex> lock(mutex_); 
 
@@ -58,7 +58,7 @@ public:
         return;
         }
         
-        DataResult result = processor->parse_frame(frame); //解析数据帧
+        DataResult result = processor->decode_frame(frame); //解析数据帧
         if(!result.is_valid){
             return;
         }
