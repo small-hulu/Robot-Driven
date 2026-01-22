@@ -42,12 +42,22 @@ public:
     {
         std::lock_guard<std::mutex> lock(mutex_); 
 
-        auto it = processor_map_.find(data_flag); //查找对应处理器
-        if (it == processor_map_.end()) {
+        auto cache_it = instance_cache_.find(data_flag);  //查找缓存的实例
+        if(cache_it != instance_cache_.end()){
+            return cache_it->second;
+        }
+
+        auto func_it = processor_map_.find(data_flag); //缓存不存在 → 查创建函数，创建实例
+        if (func_it == processor_map_.end()) {
             return nullptr;
         }
 
-        return it->second(); //调用函数创建处理器实例
+        ParseData::Ptr processor = func_it->second(); // 调用lambda创建实例，并存入缓存
+        if (processor) {
+            instance_cache_[data_flag] = processor; // 缓存实例
+        }
+
+        return processor;
     }
 
     void dispatch_process(const std::string& frame, std::shared_ptr<PublisherNode> pub_node = nullptr) //分发处理数据
@@ -71,6 +81,7 @@ private:
     ~ParseDataFactory() = default;
     std::mutex mutex_;
     std::unordered_map<uint8_t, std::function<ParseData::Ptr()>> processor_map_;
+    std::unordered_map<uint8_t, ParseData::Ptr> instance_cache_;
 };
 
 #endif // PARSE_DATA_FACTORY_H_

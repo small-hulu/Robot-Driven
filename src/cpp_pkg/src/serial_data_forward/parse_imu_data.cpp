@@ -4,7 +4,13 @@
 DataResult ParseImuData::decode_frame(const std::string& frame)
 {
     DataResult result;
-    sensor_msgs::msg::Imu imu;
+    sensor_msgs::msg::Imu& imu = result.data.imu;
+
+    imu.header.frame_id = "imu_link";  //frame_id设置成imu_link
+
+    /*********************/
+    // 协方差矩阵(手册/标定)   时间戳
+    /********************/
 
     size_t length = static_cast<uint8_t>(frame[1]) - 1;
 
@@ -18,7 +24,7 @@ DataResult ParseImuData::decode_frame(const std::string& frame)
     if (imu_data.size() < 12) { 
         return result;
     }
-
+    // 解码
     imu.linear_acceleration.x = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[0])) << 8) 
            | static_cast<uint8_t>(imu_data[1]);
 
@@ -41,7 +47,6 @@ DataResult ParseImuData::decode_frame(const std::string& frame)
 
     // 标记数据有效
     result.is_valid = true;
-    result.data.imu = imu;
     result.data_type = DataType::IMU_DATA;
 
     return result;
