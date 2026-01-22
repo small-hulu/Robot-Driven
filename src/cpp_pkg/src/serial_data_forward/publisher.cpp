@@ -17,9 +17,7 @@ void PublisherNode::publish_string_data(const std::string& data)
 }
 
 void PublisherNode::publish_imu_data(const DataResult& result){
-    imu_msg_ptr_->orientation = result.data.imu.orientation;
-    imu_msg_ptr_->angular_velocity = result.data.imu.angular_velocity;
-    imu_msg_ptr_->linear_acceleration = result.data.imu.linear_acceleration;
+    *imu_msg_ptr_ = result.data.imu;
     imu_data_publisher_->publish(*imu_msg_ptr_);
 }
 

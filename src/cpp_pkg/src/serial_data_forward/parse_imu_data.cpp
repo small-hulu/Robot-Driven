@@ -98,10 +98,7 @@ void ParseImuData::print_imu_data(const DataResult& result)
                     << ", gx=" << result.data.imu.angular_velocity.x 
                     << ", gy=" << result.data.imu.angular_velocity.y 
                     << ", gz=" << result.data.imu.angular_velocity.z 
-                    << ", qw=" << result.data.imu.orientation.w
-                    << ", qx=" << result.data.imu.orientation.x
-                    << ", qy=" << result.data.imu.orientation.y
-                    << ", qz=" << result.data.imu.orientation.z<<std::endl;
+                    << ", frame_id=" << result.data.imu.header.frame_id << std::endl;
     } else {
         std::cout << "IMU Data: invalid or wrong type" << std::endl;
     }
