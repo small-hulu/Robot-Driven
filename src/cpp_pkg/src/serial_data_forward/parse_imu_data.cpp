@@ -8,12 +8,7 @@ DataResult ParseImuData::decode_frame(const std::string& frame)
 
     imu.header.frame_id = "imu_link";  //frame_id设置成imu_link
 
-    /*********************/
-    // 协方差矩阵(手册/标定)   时间戳
-    /********************/
-
-    size_t length = static_cast<uint8_t>(frame[1]) - 1;
-
+    size_t length = static_cast<uint8_t>(frame[1]) - 1; // 校验
     if (static_cast<uint8_t>(frame[2]) != IMU_DATA_FLAG || 
         (3 + length) > frame.size()) {
         return result;
@@ -21,29 +16,54 @@ DataResult ParseImuData::decode_frame(const std::string& frame)
 
     // 提取IMU数据段
     std::string imu_data = frame.substr(3, length);
-    if (imu_data.size() < 12) { 
+    if (imu_data.size() < 16) { 
         return result;
     }
+
+    uint32_t imu_ts = parse_uint32_be(imu_data, 0); // 提取时间戳
+    uint64_t hw_time_us = imu_ts * 25; // 转换为微秒
+
+    if(!offset_initialized_){
+        init_time_offset(hw_time_us);
+    }
+
+    int64_t ros_time_us = static_cast<int64_t>(hw_time_us) + time_offset_us_; // 计算ROS时间
+    imu.header.stamp.sec = ros_time_us / 1000000;
+    imu.header.stamp.nanosec = (ros_time_us % 1000000) * 1000;
+
+    // 防止溢出
+    if (imu.header.stamp.nanosec > 999999999) {
+        imu.header.stamp.sec += 1;
+        imu.header.stamp.nanosec -= 1000000000;
+    }
+
     // 解码
-    imu.linear_acceleration.x = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[0])) << 8) 
-           | static_cast<uint8_t>(imu_data[1]);
-
-    imu.linear_acceleration.y = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[2])) << 8) 
-           | static_cast<uint8_t>(imu_data[3]);
-
-    imu.linear_acceleration.z = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[4])) << 8) 
-           | static_cast<uint8_t>(imu_data[5]);
-
-    imu.angular_velocity.x = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[6])) << 8) 
-           | static_cast<uint8_t>(imu_data[7]);
-
-    imu.angular_velocity.y = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[8])) << 8) 
-           | static_cast<uint8_t>(imu_data[9]);
-
-    imu.angular_velocity.z = (static_cast<int16_t>(static_cast<uint8_t>(imu_data[10])) << 8) 
-           | static_cast<uint8_t>(imu_data[11]);
+    imu.linear_acceleration.x = parse_int16_be(imu_data, 4);  
+    imu.linear_acceleration.y = parse_int16_be(imu_data, 6);  
+    imu.linear_acceleration.z = parse_int16_be(imu_data, 8); 
+    imu.angular_velocity.x = parse_int16_be(imu_data, 10);     
+    imu.angular_velocity.y = parse_int16_be(imu_data, 12);     
+    imu.angular_velocity.z = parse_int16_be(imu_data, 14);    
 
     Quaternion_Solution(result); // 计算四元数
+
+/************************************************************************************* */
+    imu.linear_acceleration_covariance = { //设置协方差矩阵  ******待测试、标定******
+        3.53e-5, 0.0, 0.0,
+        0.0, 3.53e-5, 0.0,
+        0.0, 0.0, 3.53e-5
+    };
+    imu.angular_velocity_covariance = {
+        1.38e-6, 0.0, 0.0,
+        0.0, 1.38e-6, 0.0,
+        0.0, 0.0, 1.38e-6
+    };
+    imu.orientation_covariance = {
+        1e-6, 0.0, 0.0,
+        0.0, 1e-6, 0.0,
+        0.0, 0.0, 1e-6
+    };
+/************************************************************************************* */
 
     // 标记数据有效
     result.is_valid = true;
@@ -173,4 +193,25 @@ void ParseImuData::Quaternion_Solution(DataResult& result){
     result.data.imu.orientation.x = q1;
     result.data.imu.orientation.y = q2;
     result.data.imu.orientation.z = q3;
+}
+
+int16_t ParseImuData::parse_int16_be(const std::string& data, size_t start) {
+    return (static_cast<int16_t>(static_cast<uint8_t>(data[start])) << 8) |
+            static_cast<uint8_t>(data[start+1]);
+}
+
+uint32_t ParseImuData::parse_uint32_be(const std::string& data, size_t start) {
+    return (static_cast<uint8_t>(data[start]) << 24) |
+           (static_cast<uint8_t>(data[start+1]) << 16) |
+           (static_cast<uint8_t>(data[start+2]) << 8) |
+           static_cast<uint8_t>(data[start+3]);
+}
+
+void ParseImuData::init_time_offset(uint64_t hw_time_us) { //计算偏移量
+    rclcpp::Time ros_now = rclcpp::Clock().now();  // 获取ROS当前时间
+    int64_t ros_time_us = ros_now.nanoseconds() / 1000;    
+    time_offset_us_ = ros_time_us - static_cast<int64_t>(hw_time_us);  // 计算偏移量：ROS时间 - 下位机时间
+    offset_initialized_ = true;
+    RCLCPP_INFO(rclcpp::get_logger("ParseImuData"), 
+                "Time offset initialized: %ld us", time_offset_us_);
 }
