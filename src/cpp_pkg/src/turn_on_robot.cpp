@@ -210,10 +210,10 @@ void turn_on_robot::Cmd_Vel_Callback(const geometry_msgs::msg::Twist::SharedPtr 
     RCLCPP_INFO(this->get_logger(),"twist_aux");  
     static geometry_msgs::msg::Twist last_twist;
 
-    if (twist_aux->linear.x  == last_twist.linear.x &&
-        twist_aux->angular.z == last_twist.angular.z) {
-        return;  
-    }
+    // if (twist_aux->linear.x  == last_twist.linear.x &&
+    //     twist_aux->angular.z == last_twist.angular.z) {
+    //     return;  
+    // }
     last_twist = *twist_aux;
 
     Params param;
