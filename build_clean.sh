@@ -1,10 +1,5 @@
-#!/bin/bash
-set -e
-
-rm -rf build/ install/ log/
 # 加载 ROS2 的环境配置文件，初始化 ROS2 环境变量、路径及命令行工具
 source /opt/tros/humble/setup.sh
-source /home/sunrise/serial_ws/install/setup.bash
 # 限制当前终端进程最大虚拟内存为2G（限制内存资源）
 ulimit -v 2097152
 #设置make编译默认使用1个CPU核心（限制CPU资源）

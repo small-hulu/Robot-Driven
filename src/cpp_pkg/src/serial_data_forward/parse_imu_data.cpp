@@ -78,7 +78,7 @@ void ParseImuData::process_data(const DataResult& result, std::shared_ptr<Publis
         return;
     }
 
-    print_imu_data(result);
+    //print_imu_data(result);
     if (pub_node) {
         pub_node->publish_imu_data(result); // 发布IMU数据
     }
