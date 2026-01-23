@@ -1,10 +1,10 @@
 #include "serial_data_forward/parse_imu_data.h"
 #include <rclcpp/rclcpp.hpp>
 
-DataResult ParseImuData::decode_frame(const std::string& frame)
+std::shared_ptr<DataResult> ParseImuData::decode_frame(const std::string& frame)
 {
-    DataResult result;
-    sensor_msgs::msg::Imu& imu = result.data.imu;
+    auto result = std::make_shared<DataResult>();
+    sensor_msgs::msg::Imu& imu = result->data.imu;
 
     imu.header.frame_id = "imu_link";  //frame_id设置成imu_link
 
@@ -66,15 +66,15 @@ DataResult ParseImuData::decode_frame(const std::string& frame)
 /************************************************************************************* */
 
     // 标记数据有效
-    result.is_valid = true;
-    result.data_type = DataType::IMU_DATA;
+    result->is_valid = true;
+    result->data_type = DataType::IMU_DATA;
 
     return result;
 }
 
-void ParseImuData::process_data(const DataResult& result, std::shared_ptr<PublisherNode> pub_node)
+void ParseImuData::process_data(const std::shared_ptr<DataResult>& result, std::shared_ptr<PublisherNode> pub_node)
 {
-    if (!result.is_valid || result.data_type != DataType::IMU_DATA) {
+    if (!result->is_valid || result->data_type != DataType::IMU_DATA) {
         return;
     }
 
@@ -89,16 +89,16 @@ uint8_t ParseImuData::get_data_flag() const
     return IMU_DATA_FLAG;
 }
 
-void ParseImuData::print_imu_data(const DataResult& result) 
+void ParseImuData::print_imu_data(const std::shared_ptr<DataResult>& result) 
 {
-    if (result.is_valid && result.data_type == DataType::IMU_DATA) {
-        std::cout << "IMU Data: ax=" << result.data.imu.linear_acceleration.x 
-                    << ", ay=" << result.data.imu.linear_acceleration.y 
-                    << ", az=" << result.data.imu.linear_acceleration.z 
-                    << ", gx=" << result.data.imu.angular_velocity.x 
-                    << ", gy=" << result.data.imu.angular_velocity.y 
-                    << ", gz=" << result.data.imu.angular_velocity.z 
-                    << ", frame_id=" << result.data.imu.header.frame_id << std::endl;
+    if (result->is_valid && result->data_type == DataType::IMU_DATA) {
+        std::cout << "IMU Data: ax=" << result->data.imu.linear_acceleration.x 
+                    << ", ay=" << result->data.imu.linear_acceleration.y 
+                    << ", az=" << result->data.imu.linear_acceleration.z 
+                    << ", gx=" << result->data.imu.angular_velocity.x 
+                    << ", gy=" << result->data.imu.angular_velocity.y 
+                    << ", gz=" << result->data.imu.angular_velocity.z 
+                    << ", frame_id=" << result->data.imu.header.frame_id << std::endl;
     } else {
         std::cout << "IMU Data: invalid or wrong type" << std::endl;
     }
@@ -118,18 +118,18 @@ float ParseImuData::InvSqrt(float number){ //平方根倒数，求四元数用�
     return y;
 }
 
-void ParseImuData::Quaternion_Solution(DataResult& result){
+void ParseImuData::Quaternion_Solution(std::shared_ptr<DataResult>& result){
     float recipNorm;
     float halfvx, halfvy, halfvz;
     float halfex, halfey, halfez;
     float qa, qb, qc;
 
-    float gx = result.data.imu.angular_velocity.x, 
-          gy = result.data.imu.angular_velocity.y, 
-          gz = result.data.imu.angular_velocity.z;
-    float ax = result.data.imu.linear_acceleration.x, 
-          ay = result.data.imu.linear_acceleration.y, 
-          az = result.data.imu.linear_acceleration.z;
+    float gx = result->data.imu.angular_velocity.x, 
+          gy = result->data.imu.angular_velocity.y, 
+          gz = result->data.imu.angular_velocity.z;
+    float ax = result->data.imu.linear_acceleration.x, 
+          ay = result->data.imu.linear_acceleration.y, 
+          az = result->data.imu.linear_acceleration.z;
 
     if(!((ax == 0.0f) && (ay == 0.0f) && (az == 0.0f))) { // 有加速度数据
         recipNorm = InvSqrt(ax * ax + ay * ay + az * az); // 归一化加速度测量值
@@ -186,10 +186,10 @@ void ParseImuData::Quaternion_Solution(DataResult& result){
     q2 *= recipNorm;
     q3 *= recipNorm;
 
-    result.data.imu.orientation.w = q0;
-    result.data.imu.orientation.x = q1;
-    result.data.imu.orientation.y = q2;
-    result.data.imu.orientation.z = q3;
+    result->data.imu.orientation.w = q0;
+    result->data.imu.orientation.x = q1;
+    result->data.imu.orientation.y = q2;
+    result->data.imu.orientation.z = q3;
 }
 
 int16_t ParseImuData::parse_int16_be(const std::string& data, size_t start) {

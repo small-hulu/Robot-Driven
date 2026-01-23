@@ -7,17 +7,17 @@
 class ParseImuData : public ParseData
 {
 public:
-    DataResult decode_frame(const std::string& frame) override;
-    void process_data(const DataResult& result, std::shared_ptr<PublisherNode> pub_node = nullptr) override;
+    std::shared_ptr<DataResult> decode_frame(const std::string& frame) override;
+    void process_data(const std::shared_ptr<DataResult>& result, std::shared_ptr<PublisherNode> pub_node = nullptr) override;
     uint8_t get_data_flag() const override;
 
 private:
     static const uint8_t IMU_DATA_FLAG = 0x11; //标志位
 
-    void print_imu_data(const DataResult& result); // 打印
+    void print_imu_data(const std::shared_ptr<DataResult>& result); // 打印
 
     static float InvSqrt(float number); 
-    void Quaternion_Solution(DataResult& result); // 计算四元数
+    void Quaternion_Solution(std::shared_ptr<DataResult>& result); // 计算四元数
     static constexpr float SAMPLING_FREQ = 20.0f; // 采样频率
     volatile float twoKp = 1.0f;    // 比例反馈系数
     volatile float twoKi = 0.0f;    // 积分反馈系数
