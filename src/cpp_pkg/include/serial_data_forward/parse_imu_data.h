@@ -27,10 +27,6 @@ private:
     bool offset_initialized_ = false; //时间偏移
     int64_t time_offset_us_ = 0; // 偏移量：ROS时间(us) - 下位机时间(us)
 
-    //辅助函数
-    inline int16_t parse_int16_be(const std::string& data, size_t start);
-    inline uint32_t parse_uint32_be(const std::string& data, size_t start);
-
     void init_time_offset(uint64_t hw_time_us);
 };
 #endif // PARSE_IMU_DATA_H_

@@ -2,6 +2,8 @@
 #include "cpp_pkg/SerialPortImpl.h"
 #include "serial_data_forward/publisher.h"
 #include "serial_data_forward/parse_data_factory.h"
+#include "serial_data_forward/parse_imu_data.h"
+#include "serial_data_forward/parse_odom_data.h"
 #include <iostream>
 #include <vector>
 #include <cstdint>
@@ -52,6 +54,8 @@ int main(int argc, char *argv[])
     auto& factory = ParseDataFactory::instance();
     factory.register_processor<ParseImuData>();
     RCLCPP_INFO(rclcpp::get_logger("main"), "IMU processor registered successfully.");
+    factory.register_processor<ParseOdomData>();
+    RCLCPP_INFO(rclcpp::get_logger("main"), "ODOM processor registered successfully.");
     
     // 设置串口
     auto& serial = SerialPortImpl::instance();
