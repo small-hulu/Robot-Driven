@@ -68,8 +68,8 @@ public:
         return;
         }
         
-        DataResult result = processor->decode_frame(frame); //解析数据帧
-        if(!result.is_valid){
+        auto result = processor->decode_frame(frame); //解析数据帧
+        if(!result->is_valid){
             return;
         }
 

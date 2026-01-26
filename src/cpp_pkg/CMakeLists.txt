@@ -12,6 +12,7 @@ find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
 
 # 设置 serial 库路径
 set(SERIAL_LIB_PATH "/usr/local")
@@ -48,6 +49,7 @@ ament_target_dependencies(
   std_msgs
   geometry_msgs
   sensor_msgs
+  nav_msgs
 )
 
 # 链接 serial 库
