@@ -13,6 +13,7 @@ find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
+find_package(tf2 REQUIRED)
 
 # 设置 serial 库路径
 set(SERIAL_LIB_PATH "/usr/local")
@@ -28,7 +29,7 @@ set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 # 使用 file(GLOB ...) 动态获取所有源文件
-file(GLOB SRC_FILES src/*.cpp src/serial_data_forward/*.cpp)
+file(GLOB SRC_FILES src/*.cpp src/serial_data_forward/*.cpp src/logger/*.cpp)
 
 # 添加可执行文件
 add_executable(driver_node ${SRC_FILES})
@@ -50,6 +51,7 @@ ament_target_dependencies(
   geometry_msgs
   sensor_msgs
   nav_msgs
+  tf2
 )
 
 # 链接 serial 库

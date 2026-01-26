@@ -31,12 +31,6 @@ std::shared_ptr<DataResult> ParseImuData::decode_frame(const std::string& frame)
     imu.header.stamp.sec = ros_time_us / 1000000;
     imu.header.stamp.nanosec = (ros_time_us % 1000000) * 1000;
 
-    // 防止溢出
-    if (imu.header.stamp.nanosec > 999999999) {
-        imu.header.stamp.sec += 1;
-        imu.header.stamp.nanosec -= 1000000000;
-    }
-
     // 解码
     imu.linear_acceleration.x = parse_int16_be(imu_data, 4);  
     imu.linear_acceleration.y = parse_int16_be(imu_data, 6);  
@@ -190,18 +184,6 @@ void ParseImuData::Quaternion_Solution(std::shared_ptr<DataResult>& result){
     result->data.imu.orientation.x = q1;
     result->data.imu.orientation.y = q2;
     result->data.imu.orientation.z = q3;
-}
-
-int16_t ParseImuData::parse_int16_be(const std::string& data, size_t start) {
-    return (static_cast<int16_t>(static_cast<uint8_t>(data[start])) << 8) |
-            static_cast<uint8_t>(data[start+1]);
-}
-
-uint32_t ParseImuData::parse_uint32_be(const std::string& data, size_t start) {
-    return (static_cast<uint8_t>(data[start]) << 24) |
-           (static_cast<uint8_t>(data[start+1]) << 16) |
-           (static_cast<uint8_t>(data[start+2]) << 8) |
-           static_cast<uint8_t>(data[start+3]);
 }
 
 void ParseImuData::init_time_offset(uint64_t hw_time_us) { //计算偏移量

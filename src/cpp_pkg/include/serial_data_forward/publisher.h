@@ -5,6 +5,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
 #include "sensor_msgs/msg/imu.hpp"
+#include "nav_msgs/msg/odometry.hpp"
 #include <string>
 #include <memory>
 
@@ -14,9 +15,11 @@ public:
     PublisherNode();
     void publish_string_data(const std::string& data);
     void publish_imu_data(const std::shared_ptr<DataResult>& result);
+    void publish_odom_data(const std::shared_ptr<DataResult>& result);
 private:
     rclcpp::Publisher<std_msgs::msg::String>::SharedPtr string_publisher_;
     rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_data_publisher_;
+    rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_data_publisher_;
     
     //复用，避免不断的开辟/销毁智能指针
     std::shared_ptr<std_msgs::msg::String> string_msg_ptr_ = std::make_shared<std_msgs::msg::String>();

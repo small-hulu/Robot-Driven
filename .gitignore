@@ -4,6 +4,8 @@ install/
 log/
 bin/
 obj/
+src/cpp_pkg/include/logger
+src/cpp_pkg/src/logger
 *.o      
 *.a       
 *.so      

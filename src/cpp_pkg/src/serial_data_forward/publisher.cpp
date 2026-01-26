@@ -19,5 +19,9 @@ void PublisherNode::publish_imu_data(const std::shared_ptr<DataResult>& result){
     imu_data_publisher_->publish(result->data.imu);
 }
 
+void PublisherNode::publish_odom_data(const std::shared_ptr<DataResult>& result){
+    odom_data_publisher_->publish(result->data.odom);
+}
+
 
 

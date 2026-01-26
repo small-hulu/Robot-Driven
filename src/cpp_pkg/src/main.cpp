@@ -2,6 +2,7 @@
 #include "cpp_pkg/SerialPortImpl.h"
 #include "serial_data_forward/publisher.h"
 #include "serial_data_forward/parse_data_factory.h"
+#include "logger/logger.h"
 #include <iostream>
 #include <vector>
 #include <cstdint>
@@ -46,7 +47,17 @@ std::vector<uint8_t> pack_frame(uint8_t cmd,const std::vector<uint8_t>& data)
 
 int main(int argc, char *argv[])
 {
+    std::string log_dir = "./ros2_async_log";
+    AsyncLogger::Instance().Init(log_dir, 1);
+    LOG_INFO("ROS2 async logger started");
+
     rclcpp::init(argc,argv);
+
+    rclcpp::on_shutdown([]() { // 注册退出的回调函数
+        LOG_INFO("Received Ctrl+C, stopping async logger...\n");
+        AsyncLogger::Instance().Flush();
+        AsyncLogger::Instance().Stop();
+    });
 
     // 注册IMU数据处理器
     auto& factory = ParseDataFactory::instance();
@@ -78,6 +89,7 @@ int main(int argc, char *argv[])
     
     rclcpp::spin(robot_node);
     rclcpp::spin(publish_node);
+    AsyncLogger::Instance().Stop();
     rclcpp::shutdown();
     return 0;
 }
