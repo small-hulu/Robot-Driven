@@ -4,6 +4,7 @@
 #include "serial_data_forward/parse_data_factory.h"
 #include "serial_data_forward/parse_imu_data.h"
 #include "serial_data_forward/parse_odom_data.h"
+#include "logger/logger.h"
 #include <iostream>
 #include <vector>
 #include <cstdint>
@@ -48,9 +49,19 @@ std::vector<uint8_t> pack_frame(uint8_t cmd,const std::vector<uint8_t>& data)
 
 int main(int argc, char *argv[])
 {
+    std::string log_dir = "./ros2_async_log";
+    AsyncLogger::Instance().Init(log_dir, 1);
+    LOG_INFO("ROS2 async logger started");
+
     rclcpp::init(argc,argv);
 
-    // 注册IMU数据处理器
+    rclcpp::on_shutdown([]() { // 注册退出的回调函数
+        LOG_INFO("Received Ctrl+C, stopping async logger...\n");
+        AsyncLogger::Instance().Flush();
+        AsyncLogger::Instance().Stop();
+    });
+
+    // 注册IMU/ODOM 数据处理器
     auto& factory = ParseDataFactory::instance();
     factory.register_processor<ParseImuData>();
     RCLCPP_INFO(rclcpp::get_logger("main"), "IMU processor registered successfully.");
@@ -80,8 +91,12 @@ int main(int argc, char *argv[])
     auto robot_node = std::make_shared<turn_on_robot>();
     robot_node->start();
     
-    rclcpp::spin(robot_node);
-    rclcpp::spin(publish_node);
+    rclcpp::executors::MultiThreadedExecutor executor;
+    executor.add_node(robot_node);
+    executor.add_node(publish_node);
+    executor.spin();
+
+    AsyncLogger::Instance().Stop();
     rclcpp::shutdown();
     return 0;
 }

@@ -6,7 +6,7 @@ PublisherNode::PublisherNode()
     // 创建一个发布者，发布到话题 hug
     string_publisher_ = this->create_publisher<std_msgs::msg::String>("hug", 10);
     imu_data_publisher_ = this->create_publisher<sensor_msgs::msg::Imu>("imu", 10);
-    odom_data_publisher_ = this->create_publisher<nav_msgs::msg::Odometry>("odom", 10);
+    odom_data_publisher_ = this->create_publisher<nav_msgs::msg::Odometry>("odom0", 10);
 }
 
 // 发布数据
