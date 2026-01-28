@@ -35,7 +35,7 @@ std::shared_ptr<DataResult> ParseOdomData::decode_frame(const std::string& frame
     double v_left = static_cast<double>(parse_int16_be(odom_data, 0)) * 0.001; // mm/s to m/s
     double v_right = static_cast<double>(parse_int16_be(odom_data, 2)) * 0.001; 
 
-    RCLCPP_INFO(rclcpp::get_logger("ParseOdomData"),
+    RCLCPP_WARN(rclcpp::get_logger("ParseOdomData"),
             "- 左轮: %.3f m/s, 右轮: %.3f m/s", 
             v_left, v_right);
 

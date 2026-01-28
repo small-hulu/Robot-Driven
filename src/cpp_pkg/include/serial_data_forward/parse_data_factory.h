@@ -1,8 +1,10 @@
 #ifndef PARSE_DATA_FACTORY_H_
 #define PARSE_DATA_FACTORY_H_
 
-#include "parse_imu_data.h"
+#include "data_result.h"
+#include "ParseData.h"
 #include "publisher.h"
+#include "ThreadPool.h"
 #include <unordered_map>
 #include <functional>
 #include <mutex>
@@ -60,28 +62,45 @@ public:
         return processor;
     }
 
-    void dispatch_process(const std::string& frame, std::shared_ptr<PublisherNode> pub_node = nullptr) //分发处理数据
-    {
-        uint8_t data_flag = static_cast<uint8_t>(frame[2]);
-        ParseData::Ptr processor = create_processor(data_flag);
-        if (!processor) {
-        return;
-        }
-        
-        auto result = processor->decode_frame(frame); //解析数据帧
-        if(!result->is_valid){
-            return;
-        }
+    void dispatch_process(const std::string& frame, std::shared_ptr<PublisherNode> pub_node = nullptr) {
+        thread_pool_->enqueue(
+            [this, frame, pub_node]() {
+                process(frame, pub_node);
+            }
+        );
+    }
 
-        processor->process_data(result, pub_node); 
+    void stop_thread_pool() {
+        thread_pool_->stop();
     }
 
 private:
-    ParseDataFactory() = default;
-    ~ParseDataFactory() = default;
     std::mutex mutex_;
     std::unordered_map<uint8_t, std::function<ParseData::Ptr()>> processor_map_;
     std::unordered_map<uint8_t, ParseData::Ptr> instance_cache_;
+
+    std::unique_ptr<ThreadPool> thread_pool_;
+
+private:
+    ParseDataFactory(){
+        thread_pool_ = std::make_unique<ThreadPool>(2);
+    }
+    ~ParseDataFactory(){
+        stop_thread_pool();
+    }
+
+    void process(const std::string& frame, std::shared_ptr<PublisherNode> pub_node) {
+        uint8_t data_flag = static_cast<uint8_t>(frame[2]);
+        auto processor = create_processor(data_flag);
+        if (!processor) {
+            return;
+        }
+        auto result = processor->decode_frame(frame);
+        if (!result->is_valid) {
+            return;
+        }
+        processor->process_data(result, pub_node);
+    }   
 };
 
 #endif // PARSE_DATA_FACTORY_H_

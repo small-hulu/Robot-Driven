@@ -1,0 +1,6 @@
+{
+    "SerialConfig":{
+        "Port" : "/dev/ttyS1",
+        "Baud_rate" : 115200
+    }
+}

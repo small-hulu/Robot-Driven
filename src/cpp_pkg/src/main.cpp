@@ -81,6 +81,8 @@ int main(int argc, char *argv[])
     // 设置串口数据处理回调函数
     serial.set_recv_callback(
         [&publish_node](const std::string& frame) {
+            //RCLCPP_INFO(rclcpp::get_logger("main"),
+            //             "Received frame: %s", bytes_to_hex(frame).c_str());
             ParseDataFactory::instance().dispatch_process(frame, publish_node);
         }
     );
@@ -97,6 +99,7 @@ int main(int argc, char *argv[])
     executor.spin();
 
     AsyncLogger::Instance().Stop();
+    ParseDataFactory::instance().stop_thread_pool();
     rclcpp::shutdown();
     return 0;
 }

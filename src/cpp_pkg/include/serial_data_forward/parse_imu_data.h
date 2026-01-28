@@ -28,5 +28,7 @@ private:
     int64_t time_offset_us_ = 0; // 偏移量：ROS时间(us) - 下位机时间(us)
 
     void init_time_offset(uint64_t hw_time_us);
+
+    std::mutex imu_cacl_mtx_;
 };
 #endif // PARSE_IMU_DATA_H_

@@ -113,6 +113,7 @@ float ParseImuData::InvSqrt(float number){ //平方根倒数，求四元数用�
 }
 
 void ParseImuData::Quaternion_Solution(std::shared_ptr<DataResult>& result){
+    std::lock_guard<std::mutex> lock(imu_cacl_mtx_);
     float recipNorm;
     float halfvx, halfvy, halfvz;
     float halfex, halfey, halfez;
@@ -187,6 +188,7 @@ void ParseImuData::Quaternion_Solution(std::shared_ptr<DataResult>& result){
 }
 
 void ParseImuData::init_time_offset(uint64_t hw_time_us) { //计算偏移量
+    std::lock_guard<std::mutex> lock(imu_cacl_mtx_); //复用同一个锁即可
     rclcpp::Time ros_now = rclcpp::Clock().now();  // 获取ROS当前时间
     int64_t ros_time_us = ros_now.nanoseconds() / 1000;    
     time_offset_us_ = ros_time_us - static_cast<int64_t>(hw_time_us);  // 计算偏移量：ROS时间 - 下位机时间
